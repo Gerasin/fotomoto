@@ -264,7 +264,51 @@ $(document).ready(function(){
 			$(this).parents('.faq-cont').find('.faq-txt').slideDown();
 		};
 		return false;
-	})
+	});
+
+	// Ввод названия
+	$('.img-name-edit strong, .img-name-edit i').click(function(){
+		var editTxt = $(this).parents('.img-name-edit').find('strong').html();
+		editTxt = editTxt.replace(/<br>/g, '\n');
+		$(this).parents('.img-name-edit').find('textarea').val(editTxt);
+		$(this).parents('.img-name-edit').find('textarea').show();
+		$(this).parents('.img-name-edit').find('i').hide();
+		$(this).parents('.img-name-edit').find('textarea').focus();
+	});
+	$('.img-name-edit textarea').keyup(function(){
+		var editTxt = $(this).val();
+		editTxt = editTxt.replace(/\n/g, '<br>');
+		$(this).parents('.img-name-edit').find('strong').html(editTxt);
+		var txtHeight = $(this).parents('.img-name-edit').find('strong').height();
+		$(this).height(txtHeight);
+	});
+
+
+	$('.grid-txt').click(function(){
+		var editTxt = $(this).html();
+		editTxt = editTxt.replace(/<br>/g, '\n');
+		$(this).parents('.grid-info').find('textarea').val(editTxt);
+		$(this).parents('.grid-info').find('textarea').show();
+		$(this).parents('.grid-info').find('i').hide();
+		$(this).parents('.grid-info').find('textarea').focus();
+		var thisHeight = $(this).height();
+		$(this).parents('.grid-info').find('textarea').height(thisHeight);
+	});
+	$('.grid-info textarea').keyup(function(){
+		var editTxt = $(this).val();
+		editTxt = editTxt.replace(/\n/g, '<br>');
+		$(this).parents('.grid-info').find('.grid-txt').html(editTxt);
+		var txtHeight = $(this).parents('.grid-info').find('.grid-txt').height();
+		$(this).height(txtHeight);
+	});
+
+	$('.photo-item').hover(function(){},
+	function(){
+		$('.grid-info textarea').hide();
+		$('.grid-info i').css({'display' : 'inline-block'});
+	});
+	
+
 	
 	
 
@@ -308,7 +352,16 @@ $(document).mouseup(function(e){
    		$('.filter-select').removeClass('active');
       	$('.filter-select').find('ul').hide();
    		popupStatusMin = 0;
-  	}
+  	};
+
+  	var container2 = $(".img-name-edit"); 
+  		if (!container2.is(e.target) && container2.has(e.target).length === 0){
+   		$('.img-name-edit textarea').hide();
+		$('.img-name-edit i').css({'display' : 'inline-block'});
+   		popupStatusMin = 0;
+  	};
+
+
 
 
   	$('.form-textarea textarea').focusout(function(){

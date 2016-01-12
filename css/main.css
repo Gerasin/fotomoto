@@ -272,7 +272,8 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .crubs a {color: #222; border-bottom: 1px solid #cecece; text-decoration: none;}
     .crubs a:hover {border-color: transparent; color: #22e0e0;}
     .crubs span {padding: 0 8px;}
-    .gallery-name {float: left; color: #aaa; padding: 0 0 31px;}
+    .gallery-name {float: left; color: #aaa; padding: 0 0 31px; display: none;}
+    .photo-item:hover .gallery-name {display: block;}
         .gallery-name strong {color: #222; font-size: 25px;}
         .gallery-name span {padding: 0 12px}
         .gallery-name a {text-decoration: none; color: #222;}
@@ -307,7 +308,12 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 .prev-navigation.inactive, .next-navigation.inactive {display: none;}
 .big-img {display: block; padding: 0 0 7px;}
 .big-img-name {display: block; color: #aaa; text-align: left; padding-right: 134px;}
-    .big-img-name strong {font-size: 24px; color: #222;}
+    .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
+    .img-name-edit:hover {border-bottom: 1px solid #222;} 
+        .big-img-name strong {font-size: 24px; line-height: 30px; color: #222; position: relative; cursor: pointer; font-family: "Times New Roman";}
+            .big-img-name .edit-lnk {position: absolute; display: none; opacity: 0; width: 14px; height: 14px; background: url(../img/edit.png) 0 0 no-repeat; margin: 9px 0 0 8px; cursor: pointer;}
+            .img-name-edit:hover .edit-lnk {display: inline-block; opacity: 1;}
+            .img-name-edit textarea {font-size: 24px; line-height: 30px; height: 28px; vertical-align: top; color: #222; font-family: "Times New Roman"; font-weight: bold; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize:none; overflow: hidden; display: none;}
 .big-img-delete {display: inline-block; float: right; position: relative; color: #222; margin-top: 8px; line-height: 20px; border-bottom: 1px solid #cecece; text-decoration: none;}
         .big-img-delete:hover {border-color: transparent; color: #22e0e0;}
 .big-img-delete:hover {color: #3fe4e4;} 
@@ -390,12 +396,36 @@ body * {outline: none !important;}
         .listing-lnk li.active {color: #fff;}
             .listing-lnk li.active:before {position: absolute; content: ' '; background: url(../img/listing-act.png) 0 0 no-repeat; width: 73px; height: 87px; top: -21px; left: 50%; margin-left: -36px; z-index: -1;}
 .photo-item {padding: 0 0 15px; position: relative;} 
+    .grid-item:hover {z-index: 10000 !important;}
     .photo-item-img {margin: 0; width: 100%;}
     .photo-item .gallery-name {font-size: 18px;padding: 0; margin: 0 0 15px;}
         .photo-item .gallery-name strong {font-size: 18px;}
-    .photo-item > a {display: inline-block; margin-bottom: 5px;}
+    .photo-item > a {display: inline-block; margin-bottom: 5px; position: relative;}
     .photo-item > a:hover {background: #22e0e0;}
         .photo-item > a:hover img {opacity: 0.5;}
+        .photo-item > a:hover:before {position: absolute; content: ' '; z-index: 2; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/ico-zoom.png) center center no-repeat;}
+        .photo-item > a.photo-close:before {display: none;} 
+    .grid .dz-preview.dz-image-preview.grid-item:hover {padding-bottom: 15px;}
+    .grid .dz-preview .dz-image img {margin-bottom: 5px;}
+    .grid-txt {display: none; cursor: pointer; line-height: 24px; color: #222; font-size: 18px;}
+    .grid-item:hover .grid-txt {display: inline;}
+    .grid-date {display: none; color: #aaa;}
+    .grid-info {position: relative; margin-right: 30px; border-bottom: 1px solid #222; border-color: transparent;}
+    .grid-info:hover {border-bottom: 1px solid #222;}
+    .grid-info textarea {font-size: 18px; height: 24px; line-height: 24px; vertical-align: top; color: #222; font-family: "Times New Roman"; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize: none; overflow: hidden; display: none;}
+    .grid-info i {width: 14px; height: 14px; position: absolute; left: -9999px; background: url(../img/edit.png) 0 0 no-repeat; opacity: 0; margin: 0px 0 0 8px; cursor: pointer; display: inline-block;}
+    .grid-info:hover i {opacity: 1; position: relative; left: auto;}
+
+    .grid-item:hover .grid-date {display: block; line-height: 24px;}
+    .grid-item:hover {z-index: 15; background: #fff; border-top: 30px solid #fff; padding-right: 0; padding-left: 30px; margin-left: -15px; margin-top: -30px;
+        -webkit-box-shadow: 0 0 20px rgba(0,0,0,.3);
+        -moz-box-shadow: 0 0 20px rgba(0,0,0,.3);
+        box-shadow: 0 0 20px rgba(0,0,0,.3);
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;}
+        .grid-item:hover .photo-close, .grid-item:hover .dz-remove {right: 12px !important;}
+        .grid-item:hover .dz-image {padding-right: 30px;}
 .cat-filter {text-align: center; font-size: 24px; font-style: italic; margin: 34px 0 45px;}
     .cat-filter a {margin: 0 22px; position: relative;}
     .cat-filter a {border-bottom: 1px solid #cecece; text-decoration: none;}
@@ -461,6 +491,7 @@ body * {outline: none !important;}
 .dropzone {border: 0; padding: 0 0 20px; margin: -20px 0 0; min-height: 1px;}
 
 .dragover-photo {position: relative;}
+    .dragover-photo .body {overflow: inherit;}
 .dragover-photo.dz-drag-hover {opacity: 0.5; box-shadow:inset 0 0 0 10px #22e0e0;}
     .dragover-photo.dz-drag-hover:before {position: fixed; content: ' '; top: 0; left: 0; right: 0; height: 10px; background: #22e0e0; z-index: 102;}
     .dragover-photo.dz-drag-hover:after {position: fixed; content: ' '; bottom: 0; left: 0; right: 0; height: 10px; background: #22e0e0; z-index: 101;}
@@ -472,8 +503,10 @@ body * {outline: none !important;}
     -webkit-box-shadow: 0 2px 2px 0px rgba(50, 50, 50, 0.1);
     -moz-box-shadow:    0 2px 2px 0px rgba(50, 50, 50, 0.1);
     box-shadow:         0 2px 2px 0px rgba(50, 50, 50, 0.1);}
+
     .form-message-center {width: 1170px; margin: 0 auto; position: relative; padding: 7px 30px 14px; line-height: 30px; color: #aaa; text-align: center;}
         .form-message span {padding: 0 10px;}
+
 .insert-button {position: absolute; left: -9999px;}
 .isotope-reset {position: absolute; left: -9999px;}
 
@@ -512,6 +545,8 @@ body * {outline: none !important;}
         .reg-soc li a.tw {background: #35c4fc;}
         .reg-soc li a.fb:hover {background: #3a4d73;}
         .reg-soc li a.tw:hover {background: #2eaadb;}
+
+.form-h3 {font-size: 24px;}
 
 .row img {max-width: 100%;}
 
