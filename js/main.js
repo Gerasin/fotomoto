@@ -252,6 +252,12 @@ $(document).ready(function(){
 		})
 	};
 
+	var imgeight = $('#profile-avatar').height();
+	if(imgeight < 150) {
+		$('#profile-avatar').css({'width' : 'auto'});
+		$('#profile-avatar').css({'height' : 150 + 'px'});
+	}
+
 
 	$('.faq-header a').click(function(){
 		if($(this).parents('.faq-cont').hasClass('active')) {
