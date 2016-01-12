@@ -1,0 +1,210 @@
+/* Styles for custom selects */
+.form-select {margin: 0 -20px; position: relative; z-index: 20;}
+.form-inp-sel {position: relative; z-index: 90;}
+
+body .custom-select *, body .custom-select {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.done select {
+    height: 1px;
+    width: 1px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: -2px;
+    z-index: -10;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.select-list {
+    position: absolute;
+    left: 0
+}
+
+.custom-select {
+    z-index: 1
+}
+
+.custom-select * {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.open_list {
+    z-index: 10
+}
+
+.custom-select ul,
+.custom-select li {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.custom-select,
+.custom-select ul {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.custom-select .custom-text {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.custom-select li {
+    cursor: pointer;
+    min-height: 25px;
+}
+
+.select-scroll {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 2
+}
+
+.default-scroll ul {
+    overflow-y: scroll
+}
+
+.custom-scroll {
+    overflow: hidden
+}
+
+.scroll-drag {
+    display: block;
+    position: absolute;
+    left: 1px;
+    cursor: pointer
+}
+
+.disabled * {
+    cursor: default !important
+}
+
+/* Style for example*/
+.custom-select {
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+.custom-select .custom-text,
+.custom-select.disabled span.custom-text:hover {
+    overflow: hidden;
+    height: 28px;
+    padding: 0 0 0 20px;
+    line-height: 26px;
+    color: #aaa;
+    z-index: 10;
+    position: relative;
+
+
+}
+
+.custom-select .custom-text:after {
+    position: relative;
+    top: -2px;
+    margin-left: 6px;
+    display: inline-block;
+    background: url(../img/sel-close.png) 0 0 no-repeat;
+    content: ' ';
+    width: 7px;
+    height: 5px;
+    z-index: 2;
+}
+.custom-select.active .custom-text:after {
+    background: url(../img/sel-open.png) 0 0 no-repeat;
+}
+
+.custom-select span.custom-text:hover,
+.active span.custom-text {
+    background: none
+}
+
+.select-list {
+    top: 28px;
+    line-height: 25px;
+    padding: 0 0 0 10px;
+    background-color: #fff;
+    color: #bdd3e6;
+    text-shadow: 0 1px 1px #113870;
+    /* Shadow styles */
+    -webkit-box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+body .select-list.custom-scroll {
+    padding: 40px 0 10px 20px;
+    top: -10px !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+.select-list li {
+    text-shadow: none;
+    color: #222;
+    margin: 4px 0 6px;
+}
+.select-list .selected {
+    color: #aaa;
+}
+.select-list .selected:after {
+    position: relative; content: ' '; background: url(../img/check-sel.png) 0 0 no-repeat; width: 10px; height: 9px; display: inline-block; margin: 0 0 0 6px; top: -2px;
+}
+.select-list li:hover {
+    color: #22e0e0;
+    text-decoration: underline;
+}
+.select-list li.disabled {
+    color: #CCCCCC;
+    cursor: default
+}
+
+.select-scroll {
+    background-color: #73b0e2;
+    width: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.scroll-drag {
+    top: 0;
+    width: 10px;
+    background-color: #14609e;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.maxlength .scroll-drag:after {
+    display: block;
+    content: '≡';
+    font-size: 14px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin: -14px 0 0 -4px
+}
+
+.custom-select .hover {
+    color: #FFF
+}
+
+.custom-select.disabled {
+    opacity: 0.5 !important;
+}
