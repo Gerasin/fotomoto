@@ -447,6 +447,7 @@ body * {outline: none !important;}
 
 .profile {position: relative; border-bottom: 1px solid #e6e6e6; height: 47px; margin: 20px 0 64px;}
     .profile-name {float: left;}
+        .profile-name .gallery-name {display: block;}
     .profile-phone {float: right; color: #aaa;}
         .profile-phone a {border: 0; text-decoration: none; color: #aaa;}
         .profile-phone strong {font-size: 24px; color: #222;}

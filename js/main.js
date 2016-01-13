@@ -289,30 +289,34 @@ $(document).ready(function(){
 		$(this).height(txtHeight);
 	});
 
+	var editName = function() {
+		$('.grid-txt').click(function(){
+			var editTxt = $(this).html();
+			editTxt = editTxt.replace(/<br>/g, '\n');
+			$(this).parents('.grid-info').find('textarea').val(editTxt);
+			$(this).parents('.grid-info').find('textarea').show();
+			$(this).parents('.grid-info').find('i').hide();
+			$(this).parents('.grid-info').find('textarea').focus();
+			var thisHeight = $(this).height();
+			$(this).parents('.grid-info').find('textarea').height(thisHeight);
+		});
+		$('.grid-info textarea').keyup(function(){
+			var editTxt = $(this).val();
+			editTxt = editTxt.replace(/\n/g, '<br>');
+			$(this).parents('.grid-info').find('.grid-txt').html(editTxt);
+			var txtHeight = $(this).parents('.grid-info').find('.grid-txt').height();
+			$(this).height(txtHeight);
+		});
 
-	$('.grid-txt').click(function(){
-		var editTxt = $(this).html();
-		editTxt = editTxt.replace(/<br>/g, '\n');
-		$(this).parents('.grid-info').find('textarea').val(editTxt);
-		$(this).parents('.grid-info').find('textarea').show();
-		$(this).parents('.grid-info').find('i').hide();
-		$(this).parents('.grid-info').find('textarea').focus();
-		var thisHeight = $(this).height();
-		$(this).parents('.grid-info').find('textarea').height(thisHeight);
-	});
-	$('.grid-info textarea').keyup(function(){
-		var editTxt = $(this).val();
-		editTxt = editTxt.replace(/\n/g, '<br>');
-		$(this).parents('.grid-info').find('.grid-txt').html(editTxt);
-		var txtHeight = $(this).parents('.grid-info').find('.grid-txt').height();
-		$(this).height(txtHeight);
-	});
+		$('.grid-item').hover(function(){},
+		function(){
+			$('.grid-info textarea').hide();
+			$('.grid-info i').css({'display' : 'inline-block'});
+		});
+	};
 
-	$('.photo-item').hover(function(){},
-	function(){
-		$('.grid-info textarea').hide();
-		$('.grid-info i').css({'display' : 'inline-block'});
-	});
+	$('.grid-item').unbind('mouseenter mouseleave', editName);
+    $('.grid-item').bind('mouseenter mouseleave', editName);
 	
 
 	
