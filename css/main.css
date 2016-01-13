@@ -400,13 +400,13 @@ body * {outline: none !important;}
     .photo-item-img {margin: 0; width: 100%;}
     .photo-item .gallery-name {font-size: 18px;padding: 0; margin: 0 0 15px;}
         .photo-item .gallery-name strong {font-size: 18px;}
-    .photo-item > a {display: inline-block; margin-bottom: 5px; position: relative;}
-    .photo-item > a:hover {background: #22e0e0;}
-        .photo-item > a:hover img {opacity: 0.5;}
-        .photo-item > a:hover:before {position: absolute; content: ' '; z-index: 2; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/ico-zoom.png) center center no-repeat;}
-        .photo-item > a.photo-close:before {display: none;} 
-    .grid .dz-preview.dz-image-preview.grid-item:hover {padding-bottom: 15px;}
-    .grid .dz-preview .dz-image img {margin-bottom: 5px;}
+    .grid-item > a, .grid-item .dz-image a {display: inline-block; margin-bottom: 5px; position: relative;}
+    .grid-item > a:hover, .grid-item .dz-image a:hover {background: #22e0e0;}
+        .grid-item > a:hover img, .grid-item .dz-image a:hover img {opacity: 0.5;}
+        .grid-item > a:hover:before, .grid-item .dz-image a:hover:before {position: absolute; content: ' '; z-index: 2; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/ico-zoom.png) center center no-repeat;}
+        .grid-item > a.photo-close:before, .grid-item .dz-image a.photo-close:before {display: none;} 
+    .grid .dz-preview.dz-image-preview.grid-item:hover {padding-bottom: 15px; margin-right: -15px;}
+    .grid .dz-preview .dz-image img {margin-bottom: 0;}
     .grid-txt {display: none; cursor: pointer; line-height: 24px; min-height: 24px; color: #222; font-size: 18px;}
     .grid-txt:after {content: ' '; display: inline-block;}
     .grid-item:hover .grid-txt {display: inline;}
