@@ -204,7 +204,7 @@ $(document).ready(function(){
 
 
     $('.photo-item .photo-close').click(function(){
-    	$(this).parents('.photo-item').remove();
+    	$(this).parents('.photo-item').hide();
     	$grid.isotope('layout');
     	return false;
     });
@@ -252,12 +252,7 @@ $(document).ready(function(){
 		})
 	};
 
-	var imgeight = $('#profile-avatar').height();
-	if(imgeight < 150) {
-		$('#profile-avatar').css({'width' : 'auto'});
-		$('#profile-avatar').css({'height' : 150 + 'px'});
-	}
-
+	
 
 	$('.faq-header a').click(function(){
 		if($(this).parents('.faq-cont').hasClass('active')) {
@@ -290,14 +285,14 @@ $(document).ready(function(){
 	});
 
 	var editName = function() {
-		$('.grid-txt').click(function(){
-			var editTxt = $(this).html();
+		$('.grid-txt, .grid-item i').click(function(){
+			var editTxt = $(this).parents('.grid-info').find('.grid-txt').html();
 			editTxt = editTxt.replace(/<br>/g, '\n');
-			$(this).parents('.grid-info').find('textarea').val(editTxt);
+			$(this).parents('.grid-item').find('textarea').val(editTxt);
 			$(this).parents('.grid-info').find('textarea').show();
 			$(this).parents('.grid-info').find('i').hide();
 			$(this).parents('.grid-info').find('textarea').focus();
-			var thisHeight = $(this).height();
+			var thisHeight = $(this).parents('.grid-info').find('.grid-txt').height();
 			$(this).parents('.grid-info').find('textarea').height(thisHeight);
 		});
 		$('.grid-info textarea').keyup(function(){
@@ -333,6 +328,12 @@ $(window).load(function(){
 	    transformsEnabled : true
 	  });
 	};
+
+	var imgeight = $('#profile-avatar').height();
+	if(imgeight < 150) {
+		$('#profile-avatar').css({'width' : 'auto'});
+		$('#profile-avatar').css({'height' : 150 + 'px'});
+	}
 });
 
 function getItemElement() {
@@ -391,4 +392,6 @@ $('body').bind( "touchend", function(e){
    		popupStatusMin = 0;
   	}
 });
+
+
 

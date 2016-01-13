@@ -407,12 +407,13 @@ body * {outline: none !important;}
         .photo-item > a.photo-close:before {display: none;} 
     .grid .dz-preview.dz-image-preview.grid-item:hover {padding-bottom: 15px;}
     .grid .dz-preview .dz-image img {margin-bottom: 5px;}
-    .grid-txt {display: none; cursor: pointer; line-height: 24px; color: #222; font-size: 18px;}
+    .grid-txt {display: none; cursor: pointer; line-height: 24px; min-height: 24px; color: #222; font-size: 18px;}
+    .grid-txt:after {content: ' '; display: inline-block;}
     .grid-item:hover .grid-txt {display: inline;}
     .grid-date {display: none; color: #aaa;}
     .grid-info {position: relative; margin-right: 30px; border-bottom: 1px solid #222; border-color: transparent;}
     .grid-info:hover {border-bottom: 1px solid #222;}
-    .grid-info textarea {font-size: 18px; height: 24px; line-height: 24px; vertical-align: top; color: #222; font-family: "Times New Roman"; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize: none; overflow: hidden; display: none;}
+    .grid-info textarea {font-size: 18px; height: 24px; line-height: 24px; min-height: 24px; vertical-align: top; color: #222; font-family: "Times New Roman"; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize: none; overflow: hidden; display: none;}
     .grid-info i {width: 14px; height: 14px; position: absolute; left: -9999px; background: url(../img/edit.png) 0 0 no-repeat; opacity: 0; margin: 0px 0 0 8px; cursor: pointer; display: inline-block;}
     .grid-info:hover i {opacity: 1; position: relative; left: auto;}
 
@@ -442,7 +443,7 @@ body * {outline: none !important;}
 .grid .dz-preview .dz-remove:hover {background: url(../img/photo-close.png) 100% 0 no-repeat !important;}
 .grid {margin: 0 -15px;}
 .grid-item {width: 25%; float: left; padding-left: 15px; padding-right: 15px;}
-.grid-item-no {height: 0; margin: 0; margin-top: -15px;} 
+.grid-item-no {height: 0 !important; margin: 0 !important; padding: 0 !important;} 
     .grid-item.photo-item .photo-close {right: -3px;}
 
 .profile {position: relative; border-bottom: 1px solid #e6e6e6; height: 47px; margin: 20px 0 64px;}
@@ -471,7 +472,7 @@ body * {outline: none !important;}
                 .uploader {position: absolute; left: -9999px;}
             .profile-ava span img {width: 150px; vertical-align: top;}
     .profile-date {position: absolute; right: 0; top: 60px; color: #aaa;}
-.profile-comment {width: 765px; margin: 0 auto 36px; text-align: center; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0;}
+.profile-comment {width: 765px; margin: 0 auto 36px; min-height: 47px; text-align: center; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0; position: relative;}
     .profile-comment p {line-height: 24px; margin: 0 0 10px; font-size: 18px;}
 .profile-edit {float: right;}
     .profile-edit a {text-decoration: none; color: #22e0e0;}
