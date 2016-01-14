@@ -278,6 +278,8 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
         .gallery-name span {padding: 0 12px}
         .gallery-name a {text-decoration: none; color: #222;}
         .gallery-name a:hover {text-decoration: underline;}
+        .photo-txt {font-size: 18px; line-height: 24px; padding-top: 5px; display: none;}
+        .photo-item:hover .photo-txt {display: block;}
     .lnk-back {float: right;padding: 7px 0 0;}
         .lnk-back a {color: #222; text-decoration: none; border-bottom: 1px solid #cecece;}
         .lnk-back a:hover {border-color: transparent; color: #22e0e0;}
