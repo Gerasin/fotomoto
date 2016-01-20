@@ -383,7 +383,8 @@ body * {outline: none !important;}
         .filter-select ul li.act a {color: #888;}
         .filter-select ul li.act a:hover {color: #22e0e0;}
         
-.photograf-name .gallery-name {padding: 6px 0 0;}
+.photograf-name .gallery-name {padding: 6px 0 0; display: block;}
+.photograf-name .img-circle {max-width: 50px;}
 .menu-cont {padding-top: 14px;}
     .menu-cont a:hover {color: #22e0e0;}
 .photograf-pad {margin-top: 10px; margin-bottom: 30px;}
