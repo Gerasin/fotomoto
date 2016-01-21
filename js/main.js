@@ -333,7 +333,18 @@ $(window).load(function(){
 	if(imgeight < 150) {
 		$('#profile-avatar').css({'width' : 'auto'});
 		$('#profile-avatar').css({'height' : 150 + 'px'});
-	}
+	};
+
+	$('.media a.pull-left').each(function(){
+		$(this).find('img').addClass('active');
+		var imgMax = $(this).width();
+		var imgHeight = $(this).find('img').height();
+		if(imgHeight < imgMax) {
+			$(this).find('img').css({'width' : 'auto'});
+			$(this).find('img').css({'height' : imgMax + 'px'});
+		};
+	});
+
 });
 
 function getItemElement() {
