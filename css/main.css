@@ -312,10 +312,10 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 .big-img-name {display: block; color: #aaa; text-align: left; padding-right: 134px;}
     .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
     .img-name-edit:hover {border-bottom: 1px solid #222;} 
-        .big-img-name strong {font-size: 24px; line-height: 30px; color: #222; position: relative; cursor: pointer; font-family: "Times New Roman";}
+        .big-img-name strong {font-size: 24px; line-height: 30px; min-height: 30px; display: inline-block; color: #222; position: relative; cursor: pointer; font-family: "Times New Roman";}
             .big-img-name .edit-lnk {position: absolute; display: none; opacity: 0; width: 14px; height: 14px; background: url(../img/edit.png) 0 0 no-repeat; margin: 9px 0 0 8px; cursor: pointer;}
             .img-name-edit:hover .edit-lnk {display: inline-block; opacity: 1;}
-            .img-name-edit textarea {font-size: 24px; line-height: 30px; height: 28px; vertical-align: top; color: #222; font-family: "Times New Roman"; font-weight: bold; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize:none; overflow: hidden; display: none;}
+            .img-name-edit textarea {font-size: 24px; line-height: 30px; height: 28px; vertical-align: top; color: #222; font-family: "Times New Roman"; font-weight: bold; position: absolute; padding: 0; margin: 0; left: 0; width: 100%; z-index: 5; border: 0; resize:none; overflow: hidden; display: none;}
 .big-img-delete {display: inline-block; float: right; position: relative; color: #222; margin-top: 8px; line-height: 20px; border-bottom: 1px solid #cecece; text-decoration: none;}
         .big-img-delete:hover {border-color: transparent; color: #22e0e0;}
 .big-img-delete:hover {color: #3fe4e4;} 
@@ -401,7 +401,7 @@ body * {outline: none !important;}
 .photo-item {padding: 0 0 15px; position: relative;} 
     .grid-item:hover {z-index: 10000 !important;}
     .photo-item-img {margin: 0; width: 100%;}
-    .photo-item .gallery-name {font-size: 18px;padding: 0; margin: 0 0 15px;}
+    .photo-item .gallery-name {font-size: 18px; padding: 0; margin: 0;}
         .photo-item .gallery-name strong {font-size: 18px;}
     .grid-item > a, .grid-item .dz-image a {display: inline-block; margin-bottom: 5px; position: relative;}
     .grid-item > a:hover, .grid-item .dz-image a:hover {background: #22e0e0;}
