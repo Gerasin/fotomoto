@@ -345,6 +345,11 @@ $(window).load(function(){
 		};
 	});
 
+	$('.lnk-delet').click(function(){
+		$(this).parent('p').parent('.media-body').parent('.media').hide();
+		return false;
+	})
+
 });
 
 function getItemElement() {

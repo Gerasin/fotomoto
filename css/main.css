@@ -329,6 +329,8 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .media-body h3 em {font-style: normal; font-weight: normal; color: #aaa; font-family: 'Times New Roman'}
     .media-body .lnk-reply {color: #aaa;}
     .media-body .lnk-reply:hover {border-color: transparent; color: #22e0e0;}
+    .media-body .lnk-delet {color: #aaa; margin-left: 18px; display: inline-block;}
+    .media-body .lnk-delet:hover {border-color: transparent; color: #22e0e0;}
 
     .media-body p {margin: 8px 0 8px;}
 .media-form {}
