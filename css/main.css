@@ -166,20 +166,19 @@ body {font-size: 18px;}
             .about h1 {margin-bottom: 31px;}
             .about p {font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif; margin: 0 0 10px;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
-        .ph-sl-item {float: left; height: 150px; padding: 5px;} 
+        .ph-sl-item {float: left; height: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
-            .ph-sl-item a {display: inline-block; position: relative;}
-            .ph-sl-item a:hover:after {position: absolute; content: ' '; top: 0; left: 0; right: 0; bottom: 0; background: #22e0e0; z-index: 3;}
-            .ph-sl-item a:hover img {opacity: 0.5;}
-            .ph-sl-item.slick-active a:hover {height: 190px;}
-            .ph-sl-item.slick-active a:hover:after {bottom: 20px;}
-        .ph-sl .slick-active {margin-top: -10px; margin-bottom: -10px; height: 170px; position: relative;}
+            .ph-sl-item a {display: block; position: relative; width: 150px; height: 150px;}
+            .ph-sl-item:hover:after {position: absolute; content: ' '; top: 0; left: 0; right: 0; bottom: 0; background: #22e0e0; z-index: 3;}
+            .ph-sl-item:hover a {opacity: 0.5; position: relative; z-index: 4;}
+        .ph-sl .slick-active {margin-top: -10px; margin-bottom: -10px; height: 180px; width: 180px; position: relative;}
+            .ph-sl .slick-active a {width: 180px; height: 180px;}
             .ph-sl .slick-active img {height: 170px; position: relative; z-index: 4;}
         .ph-sl .slick-active, .ph-sl .slick-active img, .slick-track {
             -webkit-transition: all 0.1s linear;
             -o-transition: all 0.1s linear;
             transition: all 0.1s linear;}
-            .ph-sl .slick-active:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -19px; height: 24px; background: url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
+            .ph-sl .slick-active:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -34px; border-bottom: 20px solid #fff; height: 34px; background: #fff url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
 
     .photographers-city {background: url(../img/bg.jpg) center 0 repeat; background-size: 100% 100%; padding: 41px 0 38px;}
         .photographers-header {font: normal 40px Arial; color: #22e0e0; margin: 0 0 30px;padding: 0 0 0 68px;}
@@ -192,6 +191,7 @@ body {font-size: 18px;}
         .photograf-pad a {display: inline-block;}
         .photograf-pad a:hover img {opacity: 0.5}
         .photograf-pad a:hover {background: #22e0e0;}
+            .photograf-pad .col-sm-2 img {width: 100%; object-fit: cover; height: 150px;}
 .footer {padding: 46px 0 0;}
     .head-footer {text-align: center; overflow: hidden; padding: 0 0 26px 50px;}
         .head-footer li {float: none; display: inline-block;}
