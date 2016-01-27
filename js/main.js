@@ -124,17 +124,17 @@ $(document).ready(function(){
     $('.photo-filter a.select-open').click(function(){
     	if($('.filter-select').hasClass('active')) {
     		$(this).parents('.filter-select').removeClass('active');
-    		$(this).parents('.filter-select').find('ul').hide();
+    		$(this).parents('.filter-select').find('.filter-scroll').hide();
     		console.log('da');
     	} else {
     		$(this).parents('.filter-select').addClass('active');
-    		$(this).parents('.filter-select').find('ul').show();
+    		$(this).parents('.filter-select').find('.filter-scroll').show();
     	};
     	return false;
     });
     $('.filter-select ul li a').click(function(){
     	$(this).parents('.filter-select').toggleClass('active');
-    	$(this).parents('.filter-select').find('ul').toggle();
+    	$(this).parents('.filter-select').find('.filter-scroll').toggle();
     	var selectThis = $(this).text();
     	$('.select-open em').text(selectThis);
     	$('.filter-select ul li').removeClass('act');
@@ -248,11 +248,16 @@ $(document).ready(function(){
 
 	if($('.select').length) {
 		$('.select').selectik({
-			minScrollHeight: 20
+			maxItems: 6
 		})
 	};
 
+	if($('.filter-scroll').length) {
+		$('.filter-scroll').jScrollPane();
+		$('.filter-scroll').hide();
+	};
 	
+
 
 	$('.faq-header a').click(function(){
 		if($(this).parents('.faq-cont').hasClass('active')) {
@@ -312,10 +317,13 @@ $(document).ready(function(){
 
 	$('.grid-item').unbind('mouseenter mouseleave', editName);
     $('.grid-item').bind('mouseenter mouseleave', editName);
+
+    // Смена болшой картинке по клику на нее
+    $('.big-img img').click(function(){
+    	$('.gallery-sl li.active').next('li').find('img').click();
+    });
 	
 
-	
-	
 
 });
 
@@ -335,8 +343,18 @@ $(window).load(function(){
 		$('#profile-avatar').css({'height' : 150 + 'px'});
 	};
 
+
 	$('.media a.pull-left').each(function(){
 		$(this).find('img').addClass('active');
+		var imgMax = $(this).width();
+		var imgHeight = $(this).find('img').height();
+		if(imgHeight < imgMax) {
+			$(this).find('img').css({'width' : 'auto'});
+			$(this).find('img').css({'height' : imgMax + 'px'});
+		};
+	});
+
+	$('.photographers-ava').each(function(){
 		var imgMax = $(this).width();
 		var imgHeight = $(this).find('img').height();
 		if(imgHeight < imgMax) {
@@ -348,7 +366,12 @@ $(window).load(function(){
 	$('.lnk-delet').click(function(){
 		$(this).parent('p').parent('.media-body').parent('.media').hide();
 		return false;
-	})
+	});
+
+	var editTxt = $('.profile-comment').text();
+	editTxt = editTxt.replace(/\n/g, '<br>');
+	$('.profile-comment').html(editTxt);
+	$('.profile-comment br:first').hide();
 
 });
 
@@ -377,7 +400,7 @@ $(document).mouseup(function(e){
   	var container = $(".filter-select"); 
   		if (!container.is(e.target) && container.has(e.target).length === 0){
    		$('.filter-select').removeClass('active');
-      	$('.filter-select').find('ul').hide();
+      	$('.filter-select').find('.filter-scroll').hide();
    		popupStatusMin = 0;
   	};
 
@@ -404,7 +427,7 @@ $('body').bind( "touchend", function(e){
   	var container = $(".filter-select"); 
   		if (!container.is(e.target) && container.has(e.target).length === 0){
    		$('.filter-select').removeClass('active');
-      	$('.filter-select').find('ul').hide();
+      	$('.filter-select').find('.filter-scroll').hide();
    		popupStatusMin = 0;
   	}
 });

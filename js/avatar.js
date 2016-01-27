@@ -8,7 +8,7 @@ jQuery.event.props.push('dataTransfer');
   var Avatar = {
 
     settings: {
-      bod: $("body"),
+      bod: $("#uploader"),
       img: $("#profile-avatar"),
       fileInput: $("#uploader")
     },

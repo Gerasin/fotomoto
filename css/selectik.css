@@ -108,6 +108,8 @@ body .custom-select *, body .custom-select {
     color: #aaa;
     z-index: 10;
     position: relative;
+    background: #fff;
+    z-index: 30;
 
 
 }
@@ -123,7 +125,7 @@ body .custom-select *, body .custom-select {
     height: 5px;
     z-index: 2;
 }
-.custom-select.active .custom-text:after {
+.custom-select.open_list .custom-text:after {
     background: url(../img/sel-open.png) 0 0 no-repeat;
 }
 
@@ -138,19 +140,27 @@ body .custom-select *, body .custom-select {
     padding: 0 0 0 10px;
     background-color: #fff;
     color: #bdd3e6;
-    text-shadow: 0 1px 1px #113870;
+    
+}
+
+body .select-list.custom-scroll {
+    padding: 0 0 0 20px;
+    top: 5px !important;
+    z-index: 2;
+    position: relative;
+}
+
+.custom-select.open_list {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
     /* Shadow styles */
     -webkit-box-shadow: 0 10px 30px rgba(0,0,0,.1);
     -moz-box-shadow: 0 10px 30px rgba(0,0,0,.1);
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
-}
-
-body .select-list.custom-scroll {
-    padding: 40px 0 10px 20px;
-    top: -10px !important;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    padding-top: 5px;
+    margin-top: -5px;
 }
 
 
@@ -175,7 +185,7 @@ body .select-list.custom-scroll {
 }
 
 .select-scroll {
-    background-color: #73b0e2;
+    background-color: #f1f1f1;
     width: 12px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -185,7 +195,7 @@ body .select-list.custom-scroll {
 .scroll-drag {
     top: 0;
     width: 10px;
-    background-color: #14609e;
+    background-color: #bcbcbc;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -198,6 +208,7 @@ body .select-list.custom-scroll {
     position: relative;
     left: 50%;
     top: 50%;
+    color: #000;
     margin: -14px 0 0 -4px
 }
 

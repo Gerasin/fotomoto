@@ -1,3 +1,6 @@
+@import url('jquery.jscrollpane.css');
+
+
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -154,6 +157,7 @@ body {font-size: 18px;}
                     border-radius: 50%;}
                 .photographers-name {display: block; font-size: 18px; color: #aaa;margin: 2px 0 0;}
                     .photographers-name strong {font-family: bold 18px/24px 'Arial'; color: #222; display: block; width: 70px;}
+                    .photographers-ava img {width: 100%;}
                 .sl-item a:hover .photographers-ava {background: #22e0e0;}
                     .sl-item a:hover .photographers-ava img {opacity: 0.5;}
                     .sl-item a:hover .photographers-name, .sl-item a:hover .photographers-name strong {color: #22e0e0;}
@@ -217,7 +221,7 @@ body {font-size: 18px;}
                 .form-input input {border: 0; background: none; font: normal 18px/22px 'Times New Roman'; height: 22px; width: 100%; padding: 0; outline: none;}
             .form-inp.active .form-input, .form-textarea.active .form-input {position: relative; z-index: 1; opacity: 1;}
             .form-inp.active .form-placeholder {font-size: 14px; padding-top: 0px; margin-bottom: -1px;}
-
+                body .form-group input {border: 0; background: none; font: normal 18px/22px 'Times New Roman'; height: 22px; width: 100%; padding: 0; outline: none; display: block;}
             .form-textarea .form-input {display: block; position: relative; z-index: 1; opacity: 1; margin: -25px 0 0;}
             .form-textarea.active .form-input {margin-top: 0;}
             .form-textarea.active .form-placeholder {font-size: 14px; padding-top: 0px; margin-bottom: -1px; z-index: 10; position: relative; cursor: default;}
@@ -237,10 +241,6 @@ body {font-size: 18px;}
     .media-form.media:before {display: none !important;}
     .gal_box .form-textarea {padding: 0; margin: 0;}
     .form-group {}
-    /*.gal_box .form-textarea.active {padding-bottom: 0; margin-bottom: -9px;}
-    .gal_box .form-textarea .form-placeholder {padding-bottom: 5px;}
-    .gal_box .form-textarea.active .form-placeholder {margin-bottom: 5px;}
-    .gal_box .form-textarea.active .form-placeholder {border-bottom: 1px solid #dedede;} */
     .gal_box .media-form {min-height: 130px;}
 
 .inner-page {padding: 36px 0 0;}
@@ -309,6 +309,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .next-navigation:before {content: ' '; position: absolute; top: 50%; right: 0; margin-top: -3px; background: url(../img/pointer-r.png) 0 0 no-repeat; width: 50px; height: 7px;}
 .prev-navigation.inactive, .next-navigation.inactive {display: none;}
 .big-img {display: block; padding: 0 0 7px;}
+    .big-img img {cursor: pointer;}
 .big-img-name {display: block; color: #aaa; text-align: left; padding-right: 134px;}
     .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
     .img-name-edit:hover {border-bottom: 1px solid #222;} 
@@ -384,8 +385,9 @@ body * {outline: none !important;}
     .photo-filter a:hover {color: #22e0e0; text-decoration: underline;}
         .photo-filter a span {position: absolute; top: -5px; right: -17px;}
     .filter-select {display: inline-block; position: absolute; padding: 10px 43px 10px 25px; margin-top: -10px; margin-left: -15px; text-align: left;}
-        .filter-select ul {position: relative; padding: 13px 0 0 52px; margin: 0; font-size: 18px; text-align: left; font-style: normal; display: none;}
-            .filter-select ul li {list-style: none; display: block; padding: 0 0 5px;}
+        .filter-scroll {max-height: 200px; overflow: auto; margin-top: 14px;}
+        .filter-select ul {position: relative; margin: 0 5px 0 52px; padding: 0 20px 0 0; font-size: 18px; text-align: left; font-style: normal; display: block;}
+            .filter-select ul li {list-style: none; display: block; padding: 0 20px 5px 0;}
                 .filter-select ul li a, .filter-select ul li a:hover {text-decoration: none;}
         .f-up {display: none;}
         .filter-select.active .f-up {display: inline-block;}
@@ -405,6 +407,7 @@ body * {outline: none !important;}
 .menu-cont {padding-top: 14px;}
     .menu-cont a:hover {color: #22e0e0;}
 .photograf-pad {margin-top: 10px; margin-bottom: 30px;}
+    .photograf-pad .grid-date {display: block;}
 .listing-page {text-align: center; font-size: 24px; font-style: italic; margin: 70px 0 15px;}
     .listing-page a {text-decoration: none;}
     .listing-arrow {display: inline-block;}
@@ -539,7 +542,10 @@ body * {outline: none !important;}
 .form-inp-sel {padding-top: 19px;}
 
 .inner-faq {width: 830px; margin: 0 auto; padding: 0 0 72px;}
-    .faq-cont {padding: 16px 30px 3px;}
+    .faq-cont {padding: 16px 30px 3px; 
+        -webkit-transition: margin 0.3s linear;
+        -o-transition: margin 0.3s linear;
+        transition: margin 0.3s linear;}
     .faq-cont.active {background: #fff; margin-bottom: 6px; margin-top: 12px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
@@ -556,7 +562,7 @@ body * {outline: none !important;}
                 .faq-txt p span {color: #888;}
 .faq-form {width: 830px; margin: 0 auto;}
     .faq-form-h {padding: 0 0 15px 30px; font: bold 18px Arial; color: #222;}
-    .faq-form-cont {background: #f2f2f2; padding: 5px 30px 5px;}
+    .faq-form-cont {background: #f2f2f2; padding: 12px 30px 5px;}
     .faq-form-cont .form-inp {width: 380px; margin-top: -11px;}
     .faq-form-cont .form-textarea {margin-bottom: 13px; padding-top: 0;}
     .faq-form-cont .btn-textarea {margin-top: 22px;}
