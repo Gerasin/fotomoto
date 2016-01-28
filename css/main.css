@@ -168,18 +168,19 @@ body {font-size: 18px;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
         .ph-sl-item {float: left; height: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
-            .ph-sl-item a {display: block; position: relative; width: 150px; height: 150px;}
+            .ph-sl-item > a {display: block; position: relative; width: 150px; height: 150px;}
             .ph-sl-item:hover:after {position: absolute; content: ' '; top: 0; left: 0; right: 0; bottom: 0; background: #22e0e0; z-index: 3;}
-            .ph-sl-item:hover a {opacity: 0.5; position: relative; z-index: 4;}
+            .ph-sl-item:hover > a {opacity: 0.5; position: relative; z-index: 4;}
         .ph-sl .slick-active {margin-top: -10px; margin-bottom: -10px; height: 180px; width: 180px; position: relative;}
-            .ph-sl .slick-active a {width: 180px; height: 180px;}
+            .ph-sl .slick-active > a {width: 180px; height: 180px;}
             .ph-sl .slick-active img {height: 170px; position: relative; z-index: 4;}
         .ph-sl .slick-active, .ph-sl .slick-active img, .slick-track {
             -webkit-transition: all 0.1s linear;
             -o-transition: all 0.1s linear;
             transition: all 0.1s linear;}
             .ph-sl .slick-active:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -34px; border-bottom: 20px solid #fff; height: 34px; background: #fff url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
-
+        .ph-sl .photo_day a {font-size: 16px; padding-top: 1px;}
+        .ph-sl .photo_day {position: relative; z-index: 20;}
     .photographers-city {background: url(../img/bg.jpg) center 0 repeat; background-size: 100% 100%; padding: 41px 0 38px;}
         .photographers-header {font: normal 40px Arial; color: #22e0e0; margin: 0 0 30px;padding: 0 0 0 68px;}
             .photographers-header strong {text-transform: uppercase;}
@@ -189,8 +190,8 @@ body {font-size: 18px;}
                 .photographers-lnk li a {color: #000022; text-decoration: none; border-bottom: 1px solid #cecece;}
                 .photographers-lnk li a:hover {border-color: transparent; color: #22e0e0;}
         .photograf-pad a {display: inline-block;}
-        .photograf-pad a:hover img {opacity: 0.5}
-        .photograf-pad a:hover {background: #22e0e0;}
+        .photograf-pad > a:hover img {opacity: 0.5}
+        .photograf-pad > a:hover {background: #22e0e0;}
             .photograf-pad .col-sm-2 img {width: 100%; object-fit: cover; height: 150px;}
 .footer {padding: 46px 0 0;}
     .head-footer {text-align: center; overflow: hidden; padding: 0 0 26px 50px;}
@@ -226,6 +227,8 @@ body {font-size: 18px;}
             .form-textarea.active .form-input {margin-top: 0;}
             .form-textarea.active .form-placeholder {font-size: 14px; padding-top: 0px; margin-bottom: -1px; z-index: 10; position: relative; cursor: default;}
             .form-textarea.active {border-color: transparent;}
+        .inp-sk-l {float: left; width: 45%;}
+        .inp-sk-r {float: right; width: 45%;}
     .log_in-check {padding: 19px 0 0;}
     .btn-ph {border: 0; margin: 48px auto 0; display: block; width: 100%; background: none; outline: none; text-align: center; font: normal 24px/26px 'Times New Roman';}
     .btn-ph:hover, .btn-ph:focus {text-decoration: underline; color: #22e0e0;}
@@ -258,7 +261,15 @@ body {font-size: 18px;}
 .btn-comment {float: left; padding: 30px 0 0 6px; font: normal 14px 'Times New Roman'; color: #aaa;}
 .footer-border {height: 13px; margin: 44px 0 -5px; background: url(../img/footer-border.gif) center 0 no-repeat;}
 .modal-backdrop {background: #fff; opacity: 0.65;}
-
+.inner-page .inp-sk-plus {position: relative; display: block; width: 20px; height: 20px; margin: 0 0 5px; text-decoration: none; border: 0; border: 1px solid #22e0e0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;}
+.inner-page .inp-sk-plus:hover {border: 1px solid #a3e0e0;}
+    .inp-sk-plus:before {content: ' '; top: 50%; left: 3px; right: 3px; border-top: 2px solid #22e0e0; margin-top: -1px; position: absolute;}
+    .inp-sk-plus:after {content: ' '; left: 50%; top: 3px; bottom: 3px; border-left: 2px solid #22e0e0; margin-left: -1px; position: absolute;}
+.form-inp-hide {display: none;}
+    
 
 label {font-weight: normal;}
 input[type='checkbox'] {position: absolute; left: -10000px;}
@@ -311,6 +322,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 .big-img {display: block; padding: 0 0 7px;}
     .big-img img {cursor: pointer;}
 .big-img-name {display: block; color: #aaa; text-align: left; padding-right: 134px;}
+span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
     .img-name-edit:hover {border-bottom: 1px solid #222;} 
         .big-img-name strong {font-size: 24px; line-height: 30px; min-height: 30px; display: inline-block; color: #222; position: relative; cursor: pointer; font-family: "Times New Roman";}
@@ -336,6 +348,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .media-body p {margin: 8px 0 8px;}
 .media-form {}
 .media-form-bg {background: #f2f2f2; position: relative; padding: 0 20px 5px; margin-left: -10px; margin-bottom: 25px;}
+    .media-form-bg .pull-left img {width: 100%;}
 
  
 .media-body {width: auto; display: block !important;}
@@ -435,7 +448,7 @@ body * {outline: none !important;}
     .grid-txt:after {content: ' '; display: inline-block;}
     .grid-item:hover .grid-txt {display: inline;}
     .grid-date {display: none; color: #aaa;}
-    .grid-info {position: relative; margin-right: 30px; border-bottom: 1px solid #222; border-color: transparent;}
+    .grid-info {position: relative; margin-right: 30px; border-bottom: 1px solid #222; border-color: transparent; overflow: hidden;}
     .grid-info:hover {border-bottom: 1px solid #222;}
     .grid-info textarea {font-size: 18px; height: 24px; line-height: 24px; min-height: 24px; vertical-align: top; color: #222; font-family: "Times New Roman"; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize: none; overflow: hidden; display: none;}
     .grid-info i {width: 14px; height: 14px; position: absolute; left: -9999px; background: url(../img/edit.png) 0 0 no-repeat; opacity: 0; margin: 0px 0 0 8px; cursor: pointer; display: inline-block;}
@@ -496,7 +509,7 @@ body * {outline: none !important;}
                 .uploader {position: absolute; left: -9999px;}
             .profile-ava span img {width: 150px; vertical-align: top;}
     .profile-date {position: absolute; right: 0; top: 60px; color: #aaa;}
-.profile-comment {width: 765px; margin: 0 auto 36px; min-height: 47px; text-align: center; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0; position: relative;}
+.profile-comment {width: 765px; margin: 0 auto 36px; min-height: 47px; text-align: center; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0; position: relative; overflow: hidden;}
     .profile-comment p {line-height: 24px; margin: 0 0 10px; font-size: 18px;}
 .profile-edit {float: right;}
     .profile-edit a {text-decoration: none; color: #22e0e0;}
@@ -576,8 +589,21 @@ body * {outline: none !important;}
         .reg-soc li a.tw:hover {background: #2eaadb;}
 
 .form-h3 {font-size: 24px;}
-
 .row img {max-width: 100%;}
+
+.photo-item .photo_day {display: none;}
+.photograf-pad .photo_day {padding-top: 5px;} 
+    .photo_day a {display: inline-block; padding: 0 0 0 35px; text-decoration: none; font-size: 18px; color: #aaa; background: url(../img/photo_day.png) 0 4px no-repeat;}
+    .photo_day a:hover {opacity: 0.7;}
+    .photo_day.active a {background: url(../img/photo_day-act.png) 0 4px no-repeat; color: #22e0e0;}
+    .photo-item:hover .photo_day {display: block;}
+.photograf-pad .grid-txt {display: inline;}
+.grid-setup a {color: #aaa;}
+.grid-item .grid-setup {display: none;}
+.grid-item:hover .grid-setup {display: block;}
+.ph-sl .photo-close {position: absolute; cursor: pointer; z-index: 10; top: -18px; right: -18px; width: 36px; height: 36px; background: url(../img/photo-close.png) 0 0 no-repeat;}
+
+
 
 @media only screen and (max-device-width: 990px){
 

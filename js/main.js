@@ -290,10 +290,10 @@ $(document).ready(function(){
 	});
 
 	var editName = function() {
-		$('.grid-txt, .grid-item i').click(function(){
+		$('.grid-txt, .grid-info i').click(function(){
 			var editTxt = $(this).parents('.grid-info').find('.grid-txt').html();
 			editTxt = editTxt.replace(/<br>/g, '\n');
-			$(this).parents('.grid-item').find('textarea').val(editTxt);
+			$(this).parents('.grid-info').find('textarea').val(editTxt);
 			$(this).parents('.grid-info').find('textarea').show();
 			$(this).parents('.grid-info').find('i').hide();
 			$(this).parents('.grid-info').find('textarea').focus();
@@ -308,7 +308,7 @@ $(document).ready(function(){
 			$(this).height(txtHeight);
 		});
 
-		$('.grid-item').hover(function(){},
+		$('.grid-item, .photograf-pad .col-sm-2').hover(function(){},
 		function(){
 			$('.grid-info textarea').hide();
 			$('.grid-info i').css({'display' : 'inline-block'});
@@ -317,11 +317,52 @@ $(document).ready(function(){
 
 	$('.grid-item').unbind('mouseenter mouseleave', editName);
     $('.grid-item').bind('mouseenter mouseleave', editName);
+    $('.photograf-pad .col-sm-2').unbind('mouseenter mouseleave', editName);
+    $('.photograf-pad .col-sm-2').bind('mouseenter mouseleave', editName);
 
     // Смена болшой картинке по клику на нее
     $('.big-img img').click(function(){
     	$('.gallery-sl li.active').next('li').find('img').click();
     });
+
+
+    // Добовление инпута
+    $('.inp-sk-plus').click(function(){
+    	var inpHtml = $('.form-inp-hide').html();
+    	$('.inp-sk-add').append(inpHtml);
+    	$('.form-inp .form-placeholder').click(function(){
+			if(!$(this).parent('.form-inp').hasClass('active')) {
+				$(this).parent('.form-inp').addClass('active');
+				$(this).parent('.form-inp').find('input').focus();
+			}
+		});
+		$('.form-inp input').focusout(function(){
+			var inpuTxt = $(this).val();
+			inpuTxt = inpuTxt.length;
+			if(inpuTxt == 0) {
+				$(this).parents('.form-inp').removeClass('active');
+			};
+		});
+		
+		$('.form-inp input').each(function(){
+			var inpuTxt = $(this).val();
+			inpuTxt = inpuTxt.length;
+			if(inpuTxt > 0) {
+				$(this).parents('.form-inp').addClass('active');
+			};
+		});
+		$('.form-input textarea').each(function(){
+			var inpuTxt = $('.form-input textarea').val();
+			inpuTxt = inpuTxt.length;
+			if(inpuTxt > 0) {
+				$(this).parents('.form-textarea').addClass('active');
+			};
+		});
+		$('.form-inp input').focus(function(){
+			$(this).parents('.form-inp').addClass('active');
+		});
+    	return false;
+    })
 	
 
 
@@ -372,6 +413,18 @@ $(window).load(function(){
 	editTxt = editTxt.replace(/\n/g, '<br>');
 	$('.profile-comment').html(editTxt);
 	$('.profile-comment br:first').hide();
+
+
+	// Выбор фото дня
+	$('.photo_day a').click(function(){
+		if(!$(this).parent().hasClass('active')) {
+			$('.photo_day').removeClass('active');
+			$(this).parent().addClass('active');
+		} else {
+			$('.photo_day').removeClass('active');
+		}
+		return false;
+	})
 
 });
 
