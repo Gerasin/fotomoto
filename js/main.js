@@ -362,7 +362,12 @@ $(document).ready(function(){
 			$(this).parents('.form-inp').addClass('active');
 		});
     	return false;
-    })
+    });
+
+	var galleriImgL = $('.gallery-sl li').length;
+	if(galleriImgL < 12) {
+		$('.gallery-sl').addClass('sl_center');
+	}
 	
 
 
