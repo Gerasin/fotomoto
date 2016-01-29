@@ -602,7 +602,7 @@ body * {outline: none !important;}
 .grid-item .grid-setup {display: none;}
 .grid-item:hover .grid-setup {display: block;}
 .ph-sl .photo-close {position: absolute; cursor: pointer; z-index: 10; top: -18px; right: -18px; width: 36px; height: 36px; background: url(../img/photo-close.png) 0 0 no-repeat;}
-
+.form-inp-sk input {border: 0; width: 100%;}
 
 
 @media only screen and (max-device-width: 990px){
