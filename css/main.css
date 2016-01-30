@@ -165,6 +165,7 @@ body {font-size: 18px;}
         .about {background: url(../img/about-bg.jpg) 100% 0 no-repeat; min-height: 375px; margin: 0 0 12px; padding: 11px 70px 0 71px;}
             .about h1 {margin-bottom: 31px;}
             .about p {font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif; margin: 0 0 10px;}
+        .sl.active .slick-cloned {display: none;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
         .ph-sl-item {float: left; height: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
@@ -261,15 +262,25 @@ body {font-size: 18px;}
 .btn-comment {float: left; padding: 30px 0 0 6px; font: normal 14px 'Times New Roman'; color: #aaa;}
 .footer-border {height: 13px; margin: 44px 0 -5px; background: url(../img/footer-border.gif) center 0 no-repeat;}
 .modal-backdrop {background: #fff; opacity: 0.65;}
-.inner-page .inp-sk-plus {position: relative; display: block; width: 20px; height: 20px; margin: 0 0 5px; text-decoration: none; border: 0; border: 1px solid #22e0e0;
+.inner-page .inp-sk-plus {position: relative; display: block; width: 28px; height: 28px; margin: 0 0 5px; text-decoration: none; border: 0; border: 1px solid #22e0e0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;}
 .inner-page .inp-sk-plus:hover {border: 1px solid #a3e0e0;}
-    .inp-sk-plus:before {content: ' '; top: 50%; left: 3px; right: 3px; border-top: 2px solid #22e0e0; margin-top: -1px; position: absolute;}
-    .inp-sk-plus:after {content: ' '; left: 50%; top: 3px; bottom: 3px; border-left: 2px solid #22e0e0; margin-left: -1px; position: absolute;}
+    .inp-sk-plus:before {content: ' '; top: 50%; left: 6px; right: 6px; border-top: 1px solid #22e0e0; margin-top: -1px; position: absolute;}
+    .inp-sk-plus:after {content: ' '; left: 50%; top: 6px; bottom: 6px; border-left: 1px solid #22e0e0; margin-left: -1px; position: absolute;}
 .form-inp-hide {display: none;}
-    
+.inp-close {position: absolute; top: 27px; right: 0; width: 10px; height: 10px; background: url(../img/inp-close.png) 0 0 no-repeat; z-index: 30; border: 0 !important;} 
+.inp-close:hover {opacity: 0.7;}
+.inp-sk-add .form-inp {position: relative;} 
+.form-checkbox {display: inline-block; width: 48%; padding: 5px 0 0;}
+.form-inp-check {height: auto; border-bottom: 0;}
+
+
+
+
+
+
 
 label {font-weight: normal;}
 input[type='checkbox'] {position: absolute; left: -10000px;}
@@ -322,6 +333,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 .big-img {display: block; padding: 0 0 7px;}
     .big-img img {cursor: pointer;}
 .big-img-name {display: block; color: #aaa; text-align: left; padding-right: 134px;}
+.big-img-day {display: block; padding: 5px 0 0; text-align: left;}
 span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
     .img-name-edit:hover {border-bottom: 1px solid #222;} 
@@ -434,7 +446,7 @@ body * {outline: none !important;}
 .photo-item {padding: 0 0 15px; position: relative;} 
     .grid-item:hover {z-index: 10000 !important;}
     .photo-item-img {margin: 0; width: 100%;}
-    .photo-item .gallery-name {font-size: 18px; padding: 0; margin: 0;}
+    .photo-item .gallery-name {font-size: 18px; padding: 0; margin: 0; float: none;}
         .photo-item .gallery-name strong {font-size: 18px;}
     .grid-item > a, .grid-item .dz-image a {display: inline-block; margin-bottom: 5px; position: relative;}
     .grid-item > a:hover, .grid-item .dz-image a:hover {background: #22e0e0;}
@@ -509,8 +521,16 @@ body * {outline: none !important;}
                 .uploader {position: absolute; left: -9999px;}
             .profile-ava span img {width: 150px; vertical-align: top;}
     .profile-date {position: absolute; right: 0; top: 60px; color: #aaa;}
-.profile-comment {width: 765px; margin: 0 auto 36px; min-height: 47px; text-align: center; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0; position: relative; overflow: hidden;}
+.profile-comment {margin: 0 0 36px; min-height: 47px; background: url(../img/quotes.png) 31px 0 no-repeat;padding: 12px 0 0; position: relative; overflow: hidden;}
     .profile-comment p {line-height: 24px; margin: 0 0 10px; font-size: 18px;}
+.comment-txt {width: 540px;}
+.profile-detal {float: right; width: 540px;}
+    .cont-item {position: relative; padding: 0 0 25px 30px; font-size: 18px; line-height: 24px; color: #222;}
+        .cont-item span {color: #888;}
+        .cont-item b {font-size: 24px; padding-right: 5px;}
+        .cont-item a {text-decoration: underline; color: #22e0e0;}
+        .cont-item a:hover {text-decoration: none;}
+        .item-ico {position: absolute; top: -1px; left: 0;}
 .profile-edit {float: right;}
     .profile-edit a {text-decoration: none; color: #22e0e0;}
     .profile-edit a:hover {text-decoration: underline;}
@@ -606,6 +626,8 @@ body * {outline: none !important;}
 .gallery-sl.sl_center {text-align: center;}
 .gallery-sl.sl_center ul {width: 100%; margin-left: 7px;}
 .gallery-sl.sl_center li {float: none; display: inline-block; font-size: 0; margin-left: 0;}
+.photograf-pad .photo-close {position: absolute; z-index: 10; top: -18px; right: -4px; width: 36px; height: 36px; background: url(../img/photo-close.png) 0 0 no-repeat;}
+.photograf-pad .photo-close:hover {background: url(../img/photo-close.png) 100% 0 no-repeat !important;}
 
 
 @media only screen and (max-device-width: 990px){

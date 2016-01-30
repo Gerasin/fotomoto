@@ -1,16 +1,30 @@
 $(document).ready(function(){
 
-	$('.sl').slick({
-	  dots: false,
-	  centerMode: true,
-	  infinite: true,
-	  speed: 300,
-	  slidesToShow: 1,
-	  slidesToScroll: 4,
-	  variableWidth: true,
-	  touchMove: true,
-	  initialSlide: 3
-	});
+	
+	var sl_leng = $('.sl .sl-item').length;
+	if(sl_leng > 6) {
+		$('.sl').slick({
+		  dots: false,
+		  centerMode: true,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 1,
+		  slidesToScroll: 4,
+		  variableWidth: true,
+		  touchMove: true,
+		  initialSlide: 6
+		});
+	} else {
+	  $('.sl').addClass('active');
+	  $('.sl').slick({
+		dots: false,
+	  	centerMode: true,
+	  	speed: 300,
+	  	variableWidth: true,
+	  	initialSlide: 1
+	  });
+	};
+
 	$('.sl-r').click(function(){
 		$('.sl .slick-next').click();
 		return false;
@@ -20,16 +34,21 @@ $(document).ready(function(){
 		return false;
 	});
 
+	
+	var initSl = 1
+	var ph_leng = $('.ph-sl .ph-sl-item').length;
+	if(ph_leng > 6) {
+		initSl = 3
+	};
 	$('.ph-sl').slick({
 	  centerMode: true,
 	  dots: false,
-	  infinite: true,
 	  speed: 100,
 	  slidesToShow: 1,
 	  slidesToScroll: 5,
 	  variableWidth: true,
 	  touchMove: true,
-	  initialSlide: 3
+	  initialSlide: initSl
 	});
 
 
@@ -262,12 +281,12 @@ $(document).ready(function(){
 	$('.faq-header a').click(function(){
 		if($(this).parents('.faq-cont').hasClass('active')) {
 			$('.faq-cont').removeClass('active');
-			$('.faq-txt').slideUp();
+			$('.faq-txt').slideUp('slow');
 		} else {
 			$('.faq-cont').removeClass('active');
 			$('.faq-txt').slideUp();
 			$(this).parents('.faq-cont').addClass('active');
-			$(this).parents('.faq-cont').find('.faq-txt').slideDown();
+			$(this).parents('.faq-cont').find('.faq-txt').slideDown('slow');
 		};
 		return false;
 	});
@@ -328,8 +347,14 @@ $(document).ready(function(){
 
     // Добовление инпута
     $('.inp-sk-plus').click(function(){
+    	var mesName = $('.inp-sk-l').find('input').val();
+    	var mesAdres = $('.inp-sk-r').find('input').val();
+    	console.log(mesAdres);
+    	$('.form-inp-hide').find('.form-placeholder').text(mesName);
     	var inpHtml = $('.form-inp-hide').html();
-    	$('.inp-sk-add').append(inpHtml);
+    	if(mesName.length > 1) {
+    		$('.inp-sk-add').append(inpHtml);
+    	};
     	$('.form-inp .form-placeholder').click(function(){
 			if(!$(this).parent('.form-inp').hasClass('active')) {
 				$(this).parent('.form-inp').addClass('active');
@@ -361,6 +386,12 @@ $(document).ready(function(){
 		$('.form-inp input').focus(function(){
 			$(this).parents('.form-inp').addClass('active');
 		});
+		$('.inp-sk-add .form-inp:last').find('input').focus();
+		$('.inp-sk-add .form-inp:last').find('input').val(mesAdres);
+		$('.inp-close').click(function(){
+			$(this).parents('.form-inp').remove();
+			return false;
+		})
     	return false;
     });
 
@@ -414,10 +445,10 @@ $(window).load(function(){
 		return false;
 	});
 
-	var editTxt = $('.profile-comment').text();
+	var editTxt = $('.comment-txt').text();
 	editTxt = editTxt.replace(/\n/g, '<br>');
-	$('.profile-comment').html(editTxt);
-	$('.profile-comment br:first').hide();
+	$('.comment-txt').html(editTxt);
+	$('.comment-txt br:first').hide();
 
 
 	// Выбор фото дня
