@@ -165,7 +165,8 @@ body {font-size: 18px;}
         .about {background: url(../img/about-bg.jpg) 100% 0 no-repeat; min-height: 375px; margin: 0 0 12px; padding: 11px 70px 0 71px;}
             .about h1 {margin-bottom: 31px;}
             .about p {font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif; margin: 0 0 10px;}
-        .sl.active .slick-cloned {display: none;}
+        .sl .slick-cloned {display: none;}
+        .ph-sl .slick-cloned {display: none;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
         .ph-sl-item {float: left; height: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
