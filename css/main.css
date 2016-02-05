@@ -148,6 +148,7 @@ body {font-size: 18px;}
         .photographers-r {display: inline-block; background: url(../img/sl-pointer.png) 100% center no-repeat; width: 80px; height: 16px; border: 0; text-decoration: none;}
         .photographers-h {font: italic normal 24px 'Times New Roman'; color: #aaa; padding: 0 22px;}
     .sl {margin: 0 0 6px -89px; position: relative; height: 280px;}
+    .sl.active {margin-left: 0;}
         .sl * {outline: none !important;}
         .sl-item {float: left; width: 170px; padding: 0 0 0 20px; margin: 0;}
             .sl-item a {text-decoration: none;}
@@ -168,21 +169,24 @@ body {font-size: 18px;}
         .sl .slick-cloned {display: none;}
         .ph-sl .slick-cloned {display: none;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
-        .ph-sl-item {float: left; height: 150px; padding: 0; margin: 0 5px; position: relative;} 
+        .ph-sl-item {float: left; height: 150px; width: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
             .ph-sl-item > a {display: block; position: relative; width: 150px; height: 150px;}
             .ph-sl-item:hover:after {position: absolute; content: ' '; top: 0; left: 0; right: 0; bottom: 0; background: #22e0e0; z-index: 3;}
             .ph-sl-item:hover > a {opacity: 0.5; position: relative; z-index: 4;}
-        .ph-sl .slick-active {margin-top: -10px; margin-bottom: -10px; height: 180px; width: 180px; position: relative;}
-            .ph-sl .slick-active > a {width: 180px; height: 180px;}
-            .ph-sl .slick-active img {height: 170px; position: relative; z-index: 4;}
-        .ph-sl .slick-active, .ph-sl .slick-active img, .slick-track {
+
+        .ph-sl .ph-sl-item:hover {margin-top: -10px; margin-bottom: -10px; margin-left: -10px; margin-right: -10px; height: 180px; width: 180px; position: relative;}
+            .ph-sl .ph-sl-item:hover > a {width: 180px; height: 180px;}
+            .ph-sl .ph-sl-item:hover img {height: 170px; position: relative; z-index: 4;}
+        .ph-sl .ph-sl-item:hover, .ph-sl .ph-sl-item:hover img, .slick-track {
             -webkit-transition: all 0.1s linear;
             -o-transition: all 0.1s linear;
             transition: all 0.1s linear;}
-            .ph-sl .slick-active:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -34px; border-bottom: 20px solid #fff; height: 34px; background: #fff url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
+            .ph-sl .ph-sl-item:hover:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -34px; border-bottom: 20px solid #fff; height: 34px; background: #fff url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
+        
         .ph-sl .photo_day a {font-size: 16px; padding-top: 1px;}
         .ph-sl .photo_day {position: relative; z-index: 20;}
+        .ph-sl.active {margin-left: 0;}
     .photographers-city {background: url(../img/bg.jpg) center 0 repeat; background-size: 100% 100%; padding: 41px 0 38px;}
         .photographers-header {font: normal 40px Arial; color: #22e0e0; margin: 0 0 30px;padding: 0 0 0 68px;}
             .photographers-header strong {text-transform: uppercase;}
@@ -191,10 +195,12 @@ body {font-size: 18px;}
             .photographers-lnk li {list-style: none; width: 150px; font: normal 14px/16px 'Trebuchet MS', Helvetica, sans-serif; height: 32px; float: left;}
                 .photographers-lnk li a {color: #000022; text-decoration: none; border-bottom: 1px solid #cecece;}
                 .photographers-lnk li a:hover {border-color: transparent; color: #22e0e0;}
-        .photograf-pad a {display: inline-block;}
-        .photograf-pad > a:hover img {opacity: 0.5}
-        .photograf-pad > a:hover {background: #22e0e0;}
+        .photograf-pad a {display: inline-block; position: relative;}
+        .photograf-pad .col-sm-2 > a:hover img {opacity: 0.5}
+        .photograf-pad .col-sm-2 > a:hover {background: #22e0e0;}
+        .photograf-pad .col-sm-2 > a:hover:before {position: absolute; content: ' '; z-index: 2; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/ico-zoom.png) center center no-repeat; }
             .photograf-pad .col-sm-2 img {width: 100%; object-fit: cover; height: 150px;}
+
 .footer {padding: 46px 0 0;}
     .head-footer {text-align: center; overflow: hidden; padding: 0 0 26px 50px;}
         .head-footer li {float: none; display: inline-block;}
@@ -229,6 +235,7 @@ body {font-size: 18px;}
             .form-textarea.active .form-input {margin-top: 0;}
             .form-textarea.active .form-placeholder {font-size: 14px; padding-top: 0px; margin-bottom: -1px; z-index: 10; position: relative; cursor: default;}
             .form-textarea.active {border-color: transparent;}
+            .form-comment {float: left; color: #aaa; padding-top: 24px;}
         .inp-sk-l {float: left; width: 45%;}
         .inp-sk-r {float: right; width: 45%;}
     .log_in-check {padding: 19px 0 0;}
@@ -297,11 +304,13 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .crubs span {padding: 0 8px;}
     .gallery-name {float: left; color: #aaa; padding: 0 0 31px; display: none;}
     .photo-item:hover .gallery-name {display: block;}
-        .gallery-name strong {color: #222; font-size: 25px;}
+        .gallery-name strong {color: #222; font-size: 25px; padding-left: 60px; padding-bottom: 20px; display: inline-block;}
+            .gallery-name strong span {position: absolute; top: 0; left: 0; padding: 0;}
         .gallery-name span {padding: 0 12px}
         .gallery-name a {text-decoration: none; color: #222;}
-        .gallery-name a:hover {text-decoration: underline;}
-        .photo-txt {font-size: 18px; line-height: 24px; padding-top: 5px; display: none;}
+        .gallery-name a:hover {color: #22e0e0; text-decoration: underline;}
+        .photo-txt {font-size: 18px; line-height: 24px; padding-top: 5px; display: none; overflow: hidden; word-break: break-word;}
+        .grid-users .photo-txt {margin-right: 30px;}
         .photo-item:hover .photo-txt {display: block;}
     .lnk-back {float: right;padding: 7px 0 0;}
         .lnk-back a {color: #222; text-decoration: none; border-bottom: 1px solid #cecece;}
@@ -347,7 +356,7 @@ span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
 .big-img-delete:hover {color: #3fe4e4;} 
     .big-img-delete:before {position: absolute; top: -1px; left: -27px; content: ' '; width: 17px; height: 19px; background: url(../img/ico_delete.png) 0 0 no-repeat;}
 .big-img-soc {padding: 17px 0 0; text-align: left; display: block;}
-.gallery-sl-for .head-border {margin-top: 33px;margin-bottom: 28px;}
+.gallery-sl-for .head-border {margin-top: 30px; margin-bottom: 28px;}
 .gallery-sl-for .media-list li {text-align: left; float: none; width: auto; position: relative;}
     .media-list .media {position: relative;}
     .media-list .media:before {position: absolute; top: 105px; bottom: 0; left: 34px; content: ' '; border-right: 3px solid #e6e6e6;}
@@ -357,6 +366,7 @@ span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .media-body .lnk-reply:hover {border-color: transparent; color: #22e0e0;}
     .media-body .lnk-delet {color: #aaa; margin-left: 18px; display: inline-block;}
     .media-body .lnk-delet:hover {border-color: transparent; color: #22e0e0;}
+    .media-list .media .pull-left {margin-top: 0;}
 
     .media-body p {margin: 8px 0 8px;}
 .media-form {}
@@ -386,10 +396,10 @@ span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .btn-textarea {float: right; border: 0; color: #22e0e0; font: normal 18px 'Times New Roman'; padding: 0; background: none; margin: 12px 0 7px; position: relative; z-index: 30;}
     .btn-textarea:hover {text-decoration: underline;}
 .gallery-sl-for .media-list {padding-left: 10px;}
-.gallery-sl-for .media .pull-left {margin-right: 21px; margin-top: 20px; padding-right: 0;} 
+.gallery-sl-for .media .pull-left {margin-right: 21px; margin-top: 0; padding-right: 0;} 
 .media .pull-left .media-object {width: 100%;}
 
-.media a.pull-left {display: block; width: 70px; height: 70px; overflow: hidden; border-radius: 50%;}
+.media .pull-left {display: block; width: 70px; height: 70px; overflow: hidden; border-radius: 50%;}
     .img-circle {border-radius: 0 !important;} 
 
 body * {outline: none !important;}
@@ -405,12 +415,12 @@ body * {outline: none !important;}
         .page-404-lnk a {color: #222; text-decoration: none; border-bottom: 1px solid #cecece;}
         .page-404-lnk a:hover {border-color: transparent; color: #22e0e0;}
 
-.photo-filter {text-align: center; padding: 0 0 40px; font-size: 24px; font-style: italic; color: #aaa; position: relative; z-index: 15;}
+.photo-filter {text-align: center; padding: 0 163px 40px 0; font-size: 24px; font-style: italic; color: #aaa; position: relative; z-index: 15;}
     .photo-filter a {color: #222; position: relative;}
     /*.photo-filter a em {text-transform: lowercase;}*/
     .photo-filter a:hover {color: #22e0e0; text-decoration: underline;}
         .photo-filter a span {position: absolute; top: -5px; right: -17px;}
-    .filter-select {display: inline-block; position: absolute; padding: 10px 43px 10px 25px; margin-top: -10px; margin-left: -15px; text-align: left;}
+    .filter-select {display: inline-block; position: absolute; padding: 10px 43px 10px 25px; margin-top: -10px; margin-left: 3px; text-align: left;}
         .filter-scroll {max-height: 200px; overflow: auto; margin-top: 14px;}
         .filter-select ul {position: relative; margin: 0 5px 0 52px; padding: 0 20px 0 0; font-size: 18px; text-align: left; font-style: normal; display: block;}
             .filter-select ul li {list-style: none; display: block; padding: 0 20px 5px 0;}
@@ -428,8 +438,8 @@ body * {outline: none !important;}
         .filter-select ul li.act a:hover {color: #22e0e0;}
       
 .photograf-name .gallery-name {padding: 6px 0 0; display: block;}
-.photograf-name .media a.pull-left {width: 50px; height: 50px; margin-right: 10px; padding-right: 0;}
-    .photograf-name .media a.pull-left img {width: 100%;}
+.photograf-name .media .pull-left {width: 50px; height: 50px; margin-right: 10px; padding-right: 0;}
+    .photograf-name .media .pull-left img {width: 100%;}
 .menu-cont {padding-top: 14px;}
     .menu-cont a:hover {color: #22e0e0;}
 .photograf-pad {margin-top: 10px; margin-bottom: 30px;}
@@ -448,7 +458,11 @@ body * {outline: none !important;}
     .grid-item:hover {z-index: 10000 !important;}
     .photo-item-img {margin: 0; width: 100%;}
     .photo-item .gallery-name {font-size: 18px; padding: 0; margin: 0; float: none;}
-        .photo-item .gallery-name strong {font-size: 18px;}
+        .photo-item .gallery-name strong {font-size: 18px; padding: 0;}
+        .photo-item .gallery-name a:hover {color: #22e0e0; text-decoration: underline;}
+            .photo-item .gallery-name a:hover strong {color: #22e0e0; text-decoration: underline;}
+    .grid-users .gallery-name {display: block;}
+
     .grid-item > a, .grid-item .dz-image a {display: inline-block; margin-bottom: 5px; position: relative;}
     .grid-item > a:hover, .grid-item .dz-image a:hover {background: #22e0e0;}
         .grid-item > a:hover img, .grid-item .dz-image a:hover img {opacity: 0.5;}

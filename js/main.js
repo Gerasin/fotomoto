@@ -2,10 +2,14 @@ $(document).ready(function(){
 
 	
 	var sl_leng = $('.sl .sl-item').length;
-	if(sl_leng > 6) {
+	if(sl_leng < 8) {
+		$('.sl-r, .sl-l').hide();
+	}
+	sl_leng = Math.round(sl_leng / 2) - 1;
+	if(sl_leng > 8) {
 		$('.sl').slick({
 		  dots: false,
-		  centerMode: true,
+		  centerMode: false,
 		  infinite: true,
 		  speed: 300,
 		  slidesToShow: 1,
@@ -21,7 +25,8 @@ $(document).ready(function(){
 	  	centerMode: true,
 	  	speed: 300,
 	  	variableWidth: true,
-	  	initialSlide: 1
+	  	initialSlide: sl_leng,
+	  	touchMove: false
 	  });
 	};
 
@@ -35,21 +40,37 @@ $(document).ready(function(){
 	});
 
 	
-	var initSl = 1
-	var ph_leng = $('.ph-sl .ph-sl-item').length;
-	if(ph_leng > 6) {
-		initSl = 3
+	var ph_leng = $('.ph-sl-item').length;
+	if(ph_leng < 8) {
+		$('.ph-r, .ph-l').hide();
+	}
+	ph_leng = Math.round(ph_leng / 2) - 1;
+	console.log(ph_leng);
+	if(ph_leng < 8) {
+		$('.ph-sl').slick({
+		  centerMode: true,
+		  dots: false,
+		  speed: 100,
+		  slidesToShow: 1,
+		  slidesToScroll: 5,
+		  variableWidth: true,
+		  touchMove: false,
+		  initialSlide: ph_leng
+		});
+	} else {
+	  $('.ph-sl').addClass('active');
+	  $('.ph-sl').slick({
+		  centerMode: false,
+		  dots: false,
+		  speed: 100,
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  variableWidth: true,
+		  touchMove: true,
+		  initialSlide: 6
+	  });
 	};
-	$('.ph-sl').slick({
-	  centerMode: true,
-	  dots: false,
-	  speed: 100,
-	  slidesToShow: 1,
-	  slidesToScroll: 5,
-	  variableWidth: true,
-	  touchMove: true,
-	  initialSlide: initSl
-	});
+
 
 
 
@@ -398,7 +419,13 @@ $(document).ready(function(){
 	var galleriImgL = $('.gallery-sl li').length;
 	if(galleriImgL < 12) {
 		$('.gallery-sl').addClass('sl_center');
-	}
+	};
+
+	$('.photograf-name .pull-left').hover(function(){
+		$(this).parents('.media').find('.gallery-name strong a').addClass('hov');
+	}, function(){
+		$(this).parents('.media').find('.gallery-name strong a').removeClass('hov');
+	})
 	
 
 
@@ -421,7 +448,7 @@ $(window).load(function(){
 	};
 
 
-	$('.media a.pull-left').each(function(){
+	$('.media .pull-left').each(function(){
 		$(this).find('img').addClass('active');
 		var imgMax = $(this).width();
 		var imgHeight = $(this).find('img').height();
@@ -452,7 +479,7 @@ $(window).load(function(){
 
 
 	// Выбор фото дня
-	$('.photo_day a').click(function(){
+	/*$('.photo_day a').click(function(){
 		if(!$(this).parent().hasClass('active')) {
 			$('.photo_day').removeClass('active');
 			$(this).parent().addClass('active');
@@ -460,7 +487,7 @@ $(window).load(function(){
 			$('.photo_day').removeClass('active');
 		}
 		return false;
-	})
+	})*/
 
 });
 
