@@ -662,7 +662,7 @@ body * {outline: none !important;}
 .media-list .media-form .pull-left {width: 70px; height: 70px; border: 1px solid #e0e0e0;}
 .big-img-soc {position: relative; z-index: 50;}
 .sl {margin-left: 0;}
-
+.big-img img {max-width: 100%;}
 
 
 
