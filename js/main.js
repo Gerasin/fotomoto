@@ -209,7 +209,7 @@ $(document).ready(function(){
 	    	previewsContainer: ".grid",
 	    	iconFiletypes: ['.jpg', '.png', '.gif'],
 	    	showFiletypeIcon: true
-	    })
+	    });
     };
 
 
@@ -419,7 +419,7 @@ $(document).ready(function(){
     });
 
 	var galleriImgL = $('.gallery-sl li').length;
-	if(galleriImgL < 12) {
+	if(galleriImgL < 10) {
 		$('.gallery-sl').addClass('sl_center');
 	};
 
