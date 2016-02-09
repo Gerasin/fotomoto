@@ -2,27 +2,29 @@ $(document).ready(function(){
 
 	
 	var sl_leng = $('.sl .sl-item').length;
+	var sl_lengItem = sl_leng;
 	if(sl_leng < 8) {
 		$('.sl-r, .sl-l').hide();
 	}
 	sl_leng = Math.round(sl_leng / 2) - 1;
-	if(sl_leng > 8) {
+	if(sl_lengItem > 8) {
 		$('.sl').slick({
 		  dots: false,
 		  centerMode: false,
 		  infinite: true,
 		  speed: 300,
 		  slidesToShow: 1,
-		  slidesToScroll: 4,
+		  slidesToScroll: 1,
 		  variableWidth: true,
 		  touchMove: true,
-		  initialSlide: 6
+		  initialSlide: 1
 		});
 	} else {
+		console.log('da');
 	  $('.sl').addClass('active');
 	  $('.sl').slick({
 		dots: false,
-	  	centerMode: true,
+	  	centerMode: false,
 	  	speed: 300,
 	  	variableWidth: true,
 	  	initialSlide: sl_leng,
