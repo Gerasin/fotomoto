@@ -172,18 +172,12 @@ body {font-size: 18px;}
         .ph-sl-item {float: left; height: 150px; width: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
             .ph-sl-item > a {display: block; position: relative; width: 150px; height: 150px;}
-            .ph-sl-item:hover:after {position: absolute; content: ' '; top: 0; left: 0; right: 0; bottom: 0; background: #22e0e0; z-index: 3;}
-            .ph-sl-item:hover > a {opacity: 0.5; position: relative; z-index: 4;}
 
-        .ph-sl .ph-sl-item:hover {margin-top: -10px; margin-bottom: -10px; margin-left: -10px; margin-right: -10px; height: 180px; width: 180px; position: relative;}
-            .ph-sl .ph-sl-item:hover > a {width: 180px; height: 180px;}
-            .ph-sl .ph-sl-item:hover img {height: 170px; position: relative; z-index: 4;}
-        .ph-sl .ph-sl-item:hover, .ph-sl .ph-sl-item:hover img, .slick-track {
-            -webkit-transition: all 0.1s linear;
-            -o-transition: all 0.1s linear;
-            transition: all 0.1s linear;}
-            .ph-sl .ph-sl-item:hover:before {position: absolute; z-index: 1; content: ' '; left: -5px; right: -5px; bottom: -34px; border-bottom: 20px solid #fff; height: 34px; background: #fff url(../img/shadow.png) 0 0 no-repeat; background-size: 100% 100%;}
-        
+            .ph-sl .ph-sl-item:hover > a {}
+            .ph-sl .ph-sl-item:hover a {position: relative; z-index: 4; opacity: 0.5;}
+            .ph-sl .ph-sl-item:hover {background: #22e0e0;}
+            .ph-sl .ph-sl-item:hover:before {position: absolute; content: ' '; z-index: 6; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/gallery_icon.svg) center center no-repeat;}
+
         .ph-sl .photo_day a {font-size: 16px; padding-top: 1px;}
         .ph-sl .photo_day {position: relative; z-index: 20;}
         .ph-sl.active {margin-left: 0;}
@@ -315,7 +309,8 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .lnk-back {float: right;padding: 7px 0 0;}
         .lnk-back a {color: #222; text-decoration: none; border-bottom: 1px solid #cecece;}
         .lnk-back a:hover {border-color: transparent; color: #22e0e0;}
-.gallery-sl {padding: 10px; margin: 0 0 19px; overflow: hidden; position: relative;}
+.gallery-sl-over {padding: 10px; overflow: hidden; margin: 0 0 19px;}
+.gallery-sl {padding: 0; margin: 10px 10px 0; position: relative;}
     .gallery-sl ul {margin: 0 0 0 150px;}
     .gallery-sl li {list-style: none; float: left; margin: 0 15px 0 2px; width: 82px; height: 82px; position: relative; cursor: pointer;}
         .gallery-sl li span {display: block; width: 82px; height: 82px; overflow: hidden; text-align: center;}
@@ -335,10 +330,10 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     padding: 0;
 } 
 .gallery-sl-for > ul {padding: 0;}
-.prev-navigation {position: absolute; left: 0; top: 10px; width: 82px; height: 82px; z-index: 10; background: url(../img/arrow-bg-l.png) 0 0 repeat-y;}
+.prev-navigation {position: absolute; left: -20px; top: -10px; width: 82px; height: 102px; z-index: 10; background: url(../img/arrow-bg-l.png) 0 0 repeat-y;}
     .prev-navigation:before {content: ' '; position: absolute; top: 50%; left: 0; margin-top: -3px; background: url(../img/pointer-l.png) 0 0 no-repeat; width: 50px; height: 7px;}
-.next-navigation {position: absolute; right: -1px; top: 10px; width: 82px; height: 82px; z-index: 10; background: url(../img/arrow-bg-r.png) 0 0 repeat-y;}
-    .next-navigation:before {content: ' '; position: absolute; top: 50%; right: 0; margin-top: -3px; background: url(../img/pointer-r.png) 0 0 no-repeat; width: 50px; height: 7px;}
+.next-navigation {position: absolute; right: -21px; top: -10px; width: 82px; height: 102px; z-index: 10; background: url(../img/arrow-bg-r.png) 0 0 repeat-y;}
+    .next-navigation:before {content: ' '; position: absolute; top: 50%; right: 0; margin-top: -3px; background: url(../img/pointer-r.png) 100% 0 no-repeat; width: 50px; height: 7px;}
 .prev-navigation.inactive, .next-navigation.inactive {display: none;}
 .big-img {display: block; padding: 0 0 7px;}
     .big-img img {cursor: pointer;}
@@ -649,6 +644,15 @@ body * {outline: none !important;}
 
 .media-form-bg .pull-left {margin-top: 20px !important;}
 .media-list .media:before {display: none;}
+
+.comment-txt {max-height: 150px; overflow: hidden;}
+.read_more {padding-top: 10px; font-size: 14px;}
+    .read_more a {color: #22e0e0;}
+    .lnk_close {display: none;}
+    .read_more.active .lnk_read_more {display: none;}
+    .read_more.active .lnk_close {display: inline;}
+.gallery-name strong {padding-left: 0;}
+.media-body .gallery-name strong  {padding-left: 60px;}
 
 
 @media only screen and (max-device-width: 990px){

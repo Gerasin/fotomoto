@@ -431,6 +431,18 @@ $(document).ready(function(){
 	
 
 
+	// Read more...
+	$('.lnk_read_more').click(function(){
+		$('.comment-txt').animate({'max-height' : 1000 + 'px'});
+		$('.read_more').addClass('active');
+		return false;
+	});
+	$('.lnk_close').click(function(){
+		$('.comment-txt').animate({'max-height' : 150 + 'px'});
+		$('.read_more').removeClass('active');
+		return false;
+	});
+
 });
 
 $(window).load(function(){
