@@ -134,7 +134,7 @@ body {font-size: 18px;}
         .image-header em {font-family: "Times New Roman";}
 .photo-com {position: relative; height: 190px; margin: 0 0 40px;}
     .photo-com:before {position: absolute; z-index: -1; content: ' '; top: 0; left: 45px; right: 57px; background: #f2f1ed; height: 190px;}
-    .photo-com h2 {padding: 16px 0 13px 13px; margin: 0;}
+    .photo-com h2 {padding: 16px 0 13px 13px; margin: 0; font-family: Arial;}
     .photo-com-txt {overflow: hidden; margin: 0 70px 15px 73px; color: #000022; height: 72px; font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif;}
     .photo-com-lnk {font: bold 18px 'Arial'; text-align: right;padding: 0 7px 0 0;}
         .photo-com-lnk a {color: #222; border-bottom: 3px solid #22e0e0; text-decoration: none;padding-bottom: 6px;}
@@ -157,7 +157,7 @@ body {font-size: 18px;}
                     -moz-border-radius: 50%;
                     border-radius: 50%;}
                 .photographers-name {display: block; font-size: 18px; color: #aaa;margin: 2px 0 0;}
-                    .photographers-name strong {font-family: bold 18px/24px 'Arial'; color: #222; display: block; width: 70px;}
+                    .photographers-name strong {font: bold 18px/24px 'Arial'; color: #222; display: block; width: 70px;}
                     .photographers-ava img {width: 100%;}
                 .sl-item a:hover .photographers-ava {background: #22e0e0;}
                     .sl-item a:hover .photographers-ava img {opacity: 0.5;}
@@ -165,6 +165,7 @@ body {font-size: 18px;}
         .sl .slick-arrow, .ph-sl .slick-arrow {position: absolute; left: -99999px;}
         .about {background: url(../img/about-bg.jpg) 100% 0 no-repeat; min-height: 375px; margin: 0 0 12px; padding: 11px 70px 0 71px;}
             .about h1 {margin-bottom: 31px;}
+                .about h1 strong {font-family: Arial;}
             .about p {font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif; margin: 0 0 10px;}
         .sl .slick-cloned {display: none;}
         .ph-sl .slick-cloned {display: none;}
@@ -183,7 +184,7 @@ body {font-size: 18px;}
         .ph-sl.active {margin-left: 0;}
     .photographers-city {background: url(../img/bg.jpg) center 0 repeat; background-size: 100% 100%; padding: 41px 0 38px;}
         .photographers-header {font: normal 40px Arial; color: #22e0e0; margin: 0 0 30px;padding: 0 0 0 68px;}
-            .photographers-header strong {text-transform: uppercase;}
+            .photographers-header strong {text-transform: uppercase; font-family: Arial;}
             .photographers-header em {font-family: 'Times New Roman'; color: #222;}
         .photographers-lnk {margin: 0; padding: 0 60px 10px 69px; overflow: hidden;}
             .photographers-lnk li {list-style: none; width: 150px; font: normal 14px/16px 'Trebuchet MS', Helvetica, sans-serif; height: 32px; float: left;}
@@ -216,7 +217,7 @@ body {font-size: 18px;}
         }
     .page-h {text-align: center; padding: 0 0 52px; font-family: Arial; font-size: 40px;}
         .page-h strong {text-transform: uppercase; font-weight: bold;} 
-        .page-h em {font-weight: normal;}
+        .page-h em {font-weight: normal; font-family: 'Times New Roman'}
     .log_in-form {width: 300px; margin: 0 auto;}
         .form-inp {border-bottom: 1px solid #dedede; height: 48px; margin: 0 0 12px;}
             .form-placeholder {font-size: 18px; color: #aaa; padding: 19px 0 0; cursor: pointer; z-index: 1; position: relative;}
@@ -286,7 +287,7 @@ body {font-size: 18px;}
 
 label {font-weight: normal;}
 input[type='checkbox'] {position: absolute; left: -10000px;}
-input[type='checkbox'] + label {padding-left: 32px; margin-right: 20px; position: relative; color: #222;}
+input[type='checkbox'] + label {padding-left: 32px; margin-right: 20px; position: relative; color: #222; cursor: pointer;}
 input[type='checkbox'] + label:before {position: absolute; left: 0; top: 2px; content: ' '; width: 20px; height: 20px; background: url(../img/checkbox.gif) 0 0 no-repeat;}
 input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 
@@ -298,7 +299,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .crubs span {padding: 0 8px;}
     .gallery-name {float: left; color: #aaa; padding: 0 0 31px; display: none;}
     .photo-item:hover .gallery-name {display: block;}
-        .gallery-name strong {color: #222; font-size: 25px; padding-left: 60px; padding-bottom: 20px; display: inline-block;}
+        .gallery-name strong {color: #222; font-size: 25px; padding-left: 60px; padding-bottom: 20px; display: inline-block; font-family: Arial;}
             .gallery-name strong span {position: absolute; top: 0; left: 0; padding: 0;}
         .gallery-name span {padding: 0 12px}
         .gallery-name a {text-decoration: none; color: #222;}
@@ -342,10 +343,10 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
 span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .img-name-edit {display: block; position: relative; border-bottom: 1px solid #222; border-color: transparent;}
     .img-name-edit:hover {border-bottom: 1px solid #222;} 
-        .big-img-name strong {font-size: 24px; line-height: 30px; min-height: 30px; display: inline-block; color: #222; position: relative; cursor: pointer; font-family: "Times New Roman";}
+        .big-img-name strong {font-size: 24px; line-height: 30px; min-height: 30px; display: inline-block; color: #222; position: relative; cursor: pointer; font-family: Arial;}
             .big-img-name .edit-lnk {position: absolute; display: none; opacity: 0; width: 14px; height: 14px; background: url(../img/edit.png) 0 0 no-repeat; margin: 9px 0 0 8px; cursor: pointer;}
             .img-name-edit:hover .edit-lnk {display: inline-block; opacity: 1;}
-            .img-name-edit textarea {font-size: 24px; line-height: 30px; height: 28px; vertical-align: top; color: #222; font-family: "Times New Roman"; font-weight: bold; position: absolute; padding: 0; margin: 0; left: 0; width: 100%; z-index: 5; border: 0; resize:none; overflow: hidden; display: none;}
+            .img-name-edit textarea {font-size: 24px; line-height: 30px; height: 28px; vertical-align: top; color: #222; font-family: Arial; font-weight: bold; position: absolute; padding: 0; margin: 0; left: 0; width: 100%; z-index: 5; border: 0; resize:none; overflow: hidden; display: none;}
 .big-img-delete {display: inline-block; float: right; position: relative; color: #222; margin-top: 8px; line-height: 20px; border-bottom: 1px solid #cecece; text-decoration: none;}
         .big-img-delete:hover {border-color: transparent; color: #22e0e0;}
 .big-img-delete:hover {color: #3fe4e4;} 
@@ -511,7 +512,7 @@ body * {outline: none !important;}
         .profile-name .gallery-name {display: block;}
     .profile-phone {float: right; color: #aaa;}
         .profile-phone a {border: 0; text-decoration: none; color: #aaa;}
-        .profile-phone strong {font-size: 24px; color: #222;}
+        .profile-phone strong {font-size: 24px; color: #222; font-family: Arial;}
     .profile-ava {width: 190px; height: 190px; margin: 0 auto; background: #fff; position: relative; top: -59px;}
         .profile-ava span, .profile-ava div {display: block; width: 150px; height: 150px; margin: 0 auto; overflow: hidden; position: relative;
             -webkit-border-radius: 50%;
