@@ -445,14 +445,20 @@ $(document).ready(function(){
 
 });
 
-$(window).load(function(){
-	if($('.grid').length) {
-	  var $grid = $('.grid').isotope({
+function gridStart(){
+	var $grid = $('.grid').isotope({
 	    itemSelector: '.grid-item',
 	    percentPosition: true,
 	    resizable : true,
 	    transformsEnabled : true
-	  });
+	});
+}
+
+
+$(window).load(function(){
+	if($('.grid').length) {
+
+	  
 	};
 
 	var imgeight = $('#profile-avatar').height();

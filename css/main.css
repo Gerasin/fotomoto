@@ -537,6 +537,7 @@ body * {outline: none !important;}
     .profile-comment p {line-height: 24px; margin: 0 0 10px; font-size: 18px;}
 .comment-txt {width: 540px;}
 .profile-detal {float: right; width: 540px;}
+    .profile-detal b {font-family: Arial;}
     .cont-item {position: relative; padding: 0 0 25px 30px; font-size: 18px; line-height: 24px; color: #222;}
         .cont-item span {color: #888;}
         .cont-item b {font-size: 24px; padding-right: 5px;}
