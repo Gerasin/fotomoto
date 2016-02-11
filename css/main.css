@@ -675,6 +675,9 @@ body * {outline: none !important;}
 
 }
 
+.media-body h3 a {text-decoration: none;}
+.media-body h3 a:hover {text-decoration: underline;}
+
 
 @media screen and (max-width: 1400px) {
     .ph-sl {width: 1450px;}
