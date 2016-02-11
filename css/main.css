@@ -134,7 +134,7 @@ body {font-size: 18px;}
         .image-header em {font-family: "Times New Roman";}
 .photo-com {position: relative; height: 190px; margin: 0 0 40px;}
     .photo-com:before {position: absolute; z-index: -1; content: ' '; top: 0; left: 45px; right: 57px; background: #f2f1ed; height: 190px;}
-    .photo-com h2 {padding: 16px 0 13px 13px; margin: 0; font-family: Arial;}
+    .photo-com h2 {padding: 16px 0 13px 13px; margin: 0; font-family: Arial; font-size: 24px;}
     .photo-com-txt {overflow: hidden; margin: 0 70px 15px 73px; color: #000022; height: 72px; font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif;}
     .photo-com-lnk {font: bold 18px 'Arial'; text-align: right;padding: 0 7px 0 0;}
         .photo-com-lnk a {color: #222; border-bottom: 3px solid #22e0e0; text-decoration: none;padding-bottom: 6px;}
@@ -164,20 +164,22 @@ body {font-size: 18px;}
                     .sl-item a:hover .photographers-name, .sl-item a:hover .photographers-name strong {color: #22e0e0;}
         .sl .slick-arrow, .ph-sl .slick-arrow {position: absolute; left: -99999px;}
         .about {background: url(../img/about-bg.jpg) 100% 0 no-repeat; min-height: 375px; margin: 0 0 12px; padding: 11px 70px 0 71px;}
-            .about h1 {margin-bottom: 31px;}
+            .about h1 {margin-bottom: 31px; font-size: 40px;}
                 .about h1 strong {font-family: Arial;}
             .about p {font: normal 14px/24px 'Trebuchet MS', Helvetica, sans-serif; margin: 0 0 10px;}
         .sl .slick-cloned {display: none;}
         .ph-sl .slick-cloned {display: none;}
+        .owl-carousel .owl-item {width: 150px;}
     .ph-sl {position: relative; margin-bottom: 47px; height: 170px; margin-top: -7px; margin-left: 95px;}
         .ph-sl-item {float: left; height: 150px; width: 150px; padding: 0; margin: 0 5px; position: relative;} 
             .ph-sl-item img {height: 150px; position: relative; z-index: 4;}
             .ph-sl-item > a {display: block; position: relative; width: 150px; height: 150px;}
+                .ph-sl-item > a span {display: block; width: 150px; height: 150px;}
 
             .ph-sl .ph-sl-item:hover > a {}
-            .ph-sl .ph-sl-item:hover a {position: relative; z-index: 4; opacity: 0.5;}
+            .ph-sl .ph-sl-item:hover a span {position: relative; z-index: 4; opacity: 0.5;}
             .ph-sl .ph-sl-item:hover {background: #22e0e0;}
-            .ph-sl .ph-sl-item:hover:before {position: absolute; content: ' '; z-index: 6; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/gallery_icon.svg) center center no-repeat;}
+            .ph-sl .ph-sl-item:hover a:before {position: absolute; content: ' '; z-index: 6; width: 100%; height: 100%; top: 0; left: 0; background: url(../img/gallery_icon.svg) center center no-repeat;}
 
         .ph-sl .photo_day a {font-size: 16px; padding-top: 1px;}
         .ph-sl .photo_day {position: relative; z-index: 20;}
@@ -299,7 +301,7 @@ input[type='checkbox']:checked + label:before {background-position: 100% 0;}
     .crubs span {padding: 0 8px;}
     .gallery-name {float: left; color: #aaa; padding: 0 0 31px; display: none;}
     .photo-item:hover .gallery-name {display: block;}
-        .gallery-name strong {color: #222; font-size: 25px; padding-left: 60px; padding-bottom: 20px; display: inline-block; font-family: Arial;}
+        .gallery-name strong {color: #222; font-size: 24px; padding-left: 60px; padding-bottom: 20px; display: inline-block; font-family: Arial;}
             .gallery-name strong span {position: absolute; top: 0; left: 0; padding: 0;}
         .gallery-name span {padding: 0 12px}
         .gallery-name a {text-decoration: none; color: #222;}
@@ -547,7 +549,7 @@ body * {outline: none !important;}
 .profile-edit {float: right;}
     .profile-edit a {text-decoration: none; color: #22e0e0;}
     .profile-edit a:hover {text-decoration: underline;}
-.add-file {border-bottom: 1px solid #e6e6e6; height: 28px; margin: 0 0 124px;}
+.add-file {border-bottom: 1px solid #e6e6e6; height: 28px; margin: -40px 0 84px;}
     .add-file-lnk {background: #fff; text-decoration: none; width: 90px; margin: 0 auto 0; position: relative; display: block;top: -7px; cursor: pointer;}
         .add-file-btn {display: block; background: url(../img/add-file.png) 0 0 no-repeat; width: 70px; height: 70px; margin: 0 auto;}
         .add-file-lnk:hover .add-file-btn {background-position: -234px 0;}
@@ -647,7 +649,10 @@ body * {outline: none !important;}
 .media-form-bg .pull-left {margin-top: 20px !important;}
 .media-list .media:before {display: none;}
 
-.comment-txt {max-height: 150px; overflow: hidden;}
+.comment-txt {overflow: hidden;
+    -webkit-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;}
 .read_more {padding-top: 10px; font-size: 14px;}
     .read_more a {color: #22e0e0;}
     .lnk_close {display: none;}
@@ -664,6 +669,21 @@ body * {outline: none !important;}
     .profile-ava a:hover img {opacity: 1;}
 
 }
+
+
+@media screen and (max-width: 1400px) {
+    .ph-sl {width: 1450px;}
+}
+@media screen and (max-width: 1300px) {
+    .ph-sl {width: 1280px;}
+}
+@media screen and (max-width: 1100px) {
+    .ph-sl {width: 1110px;}
+}
+
+.ph-sl {margin-left: 0;}
+.ph-sl.center {text-align: center;}
+    .ph-sl.center .ph-sl-item {display: inline-block; float: none;}
 
 .media-list .media-form .pull-left {width: 70px; height: 70px; border: 1px solid #e0e0e0;}
 .big-img-soc {position: relative; z-index: 50;}
