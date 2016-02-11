@@ -499,9 +499,8 @@ function gridStart(){
 
 
 $(window).load(function(){
-	if($('.grid').length) {
-		setTimeout(gridStart, 1000)
-	};
+	gridStart();
+	$('.grid').addClass('active');
 
 	var imgeight = $('#profile-avatar').height();
 	if(imgeight < 150) {

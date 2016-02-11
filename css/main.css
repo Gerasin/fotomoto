@@ -360,6 +360,8 @@ span.big-img-name {padding-right: 0; margin-right: 134px; overflow: hidden;}
     .media-list .media:before {position: absolute; top: 105px; bottom: 0; left: 34px; content: ' '; border-right: 3px solid #e6e6e6;}
 .media-body h3 {font-weight: bold; font-size: 18px; font-family: Arial; margin: 0 0 3px;}
     .media-body h3 em {font-style: normal; font-weight: normal; color: #aaa; font-family: 'Times New Roman'}
+    .media-body h3 a {text-decoration: none;}
+    .media-body h3 a:hover {text-decoration: underline;}
     .media-body .lnk-reply {color: #aaa;}
     .media-body .lnk-reply:hover {border-color: transparent; color: #22e0e0;}
     .media-body .lnk-delet {color: #aaa; margin-left: 18px; display: inline-block;}
@@ -479,6 +481,9 @@ body * {outline: none !important;}
     .grid-info textarea {font-size: 18px; height: 24px; line-height: 24px; min-height: 24px; vertical-align: top; color: #222; font-family: "Times New Roman"; position: absolute; padding: 2px 0 0; margin: 0; top: 2px; left: 0; width: 100%; z-index: 5; border: 0; resize: none; overflow: hidden; display: none;}
     .grid-info i {width: 14px; height: 14px; position: absolute; left: -9999px; background: url(../img/edit.png) 0 0 no-repeat; opacity: 0; margin: 0px 0 0 8px; cursor: pointer; display: inline-block;}
     .grid-info:hover i {opacity: 1; position: relative; left: auto;}
+    
+    .grid:before {position: absolute; top: -20px; left: 0; bottom: 0; right: 0; content: ' '; z-index: 20;}
+    .grid.active:before {display: none;}
 
     .grid-item:hover .grid-date {display: block; line-height: 24px;}
     .grid-item:hover {z-index: 15; background: #fff; border-top: 30px solid #fff; padding-right: 0; padding-left: 30px; margin-left: -15px; margin-top: -30px;
