@@ -560,7 +560,7 @@ body * {outline: none !important;}
         .add-file-lnk:hover .add-file-btn {background-position: -234px 0;}
         .add-file-lnk:active .add-file-btn {background-position: -470px 0;}
         .add-file-txt {position: absolute; width: 180px; left: 50%; margin-left: -90px; text-align: center; color: #22e0e0; font-size: 24px;margin-top: -4px;}
-.add-file-com {position: relative; padding: 43px 0 0; color: #aaa; text-align: center;}
+.add-file-com {position: relative; padding: 32px 0 0; color: #aaa; text-align: center;}
     .add-file-co-ico {position: absolute; background: url(../img/co-ico.png) 0 0 no-repeat; width: 136px; height: 122px; top: -92px; left: 50%; margin-left: -68px;}
     .add-file-com h2 {color: #222;font: bold 24px Arial;margin: 0 0 5px;}
     .add-file-com p {margin: 0 0 10px;}
@@ -665,6 +665,9 @@ body * {outline: none !important;}
     .read_more.active .lnk_close {display: inline;}
 .gallery-name strong {padding-left: 0;}
 .media-body .gallery-name strong  {padding-left: 60px;}
+.big-next, .big-prev {position: absolute; left: -9999px; opacity: 0;}
+
+
 
 
 @media only screen and (max-device-width: 990px){
@@ -697,6 +700,9 @@ body * {outline: none !important;}
 .big-img-soc {position: relative; z-index: 50;}
 .sl {margin-left: 0;}
 .big-img img {max-width: 100%;}
+
+
+
 
 
 
