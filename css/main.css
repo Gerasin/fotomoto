@@ -702,7 +702,10 @@ body * {outline: none !important;}
 .big-img img {max-width: 100%;}
 
 
-
+/*--------- style -----------*/
+.image-main {height: 400px; text-align: center; background: #F2F1ED;}
+    .image-main img {max-height: 100%; max-width: 100%;}
+    
 
 
 

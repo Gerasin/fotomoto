@@ -99,6 +99,24 @@ $(document).ready(function(){
 		        },
 		        1900:{
 		            items:12
+		        },
+		        2100:{
+		            items:13
+		        },
+		        2300:{
+		            items:14
+		        },
+		        2500:{
+		            items:15
+		        },
+		        2700:{
+		            items:16
+		        },
+		        2900:{
+		            items:16
+		        },
+		        3100:{
+		            items:17
 		        }
 		    }
 		})
